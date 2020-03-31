@@ -1,0 +1,11 @@
+- name: test
+  description: Please add description
+  example: Please add example
+  type: group
+  fields:
+  - name: name
+    description: Please add description
+    example: Please add example
+  - name: value
+    description: Please add description
+    example: Please add example
