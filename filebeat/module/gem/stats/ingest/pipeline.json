@@ -1,0 +1,25 @@
+{
+  "description": "Pipeline for parsing gem stats logs",
+  "processors": [
+	  {
+		  "grok": {
+			  "field": "message",
+			  "patterns": [
+				"%{NOTSPACE:gem.test.name}%{SPACE}%{NOTSPACE:gem.test.value}"
+			  ],
+			  "ignore_missing": true
+		  }
+	  },
+	  {
+		  "remove": {
+			  "field": "message"
+		  }
+	  }
+    ],
+  "on_failure" : [{
+    "set" : {
+      "field" : "error.message",
+      "value" : "{{ _ingest.on_failure_message }}"
+    }
+  }]
+}
