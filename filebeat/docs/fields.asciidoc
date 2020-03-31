@@ -27,6 +27,7 @@ grouped in the following categories:
 * <<exported-fields-ecs>>
 * <<exported-fields-elasticsearch>>
 * <<exported-fields-envoyproxy>>
+* <<exported-fields-gem>>
 * <<exported-fields-googlecloud>>
 * <<exported-fields-haproxy>>
 * <<exported-fields-host-processor>>
@@ -11935,6 +11936,43 @@ Envoy proxy type, tcp or http
 
 
 type: keyword
+
+--
+
+[[exported-fields-gem]]
+== gem fields
+
+gem Module
+
+
+
+[float]
+=== gem
+
+
+
+
+[float]
+=== test
+
+Please add description
+
+
+*`gem.test.name`*::
++
+--
+Please add description
+
+example: Please add example
+
+--
+
+*`gem.test.value`*::
++
+--
+Please add description
+
+example: Please add example
 
 --
 

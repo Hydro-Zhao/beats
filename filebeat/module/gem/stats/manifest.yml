@@ -3,11 +3,9 @@ module_version: 1.0
 var:
   - name: paths
     default:
-      - /example/test.log*
-    os.darwin:
-      - /usr/local/example/test.log*
-    os.windows:
-      - c:/programdata/example/logs/test.log*
+      - /home/hydro/gem5_X86_opt/m5out/stats.txt
+    os.darwin: []
+    os.windows: []
 
 ingest_pipeline: ingest/pipeline.json
 input: config/stats.yml

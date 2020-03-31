@@ -1,0 +1,13 @@
+[
+    {
+        "event.dataset": "gem.stats",
+        "event.module": "gem",
+        "fileset.name": "stats",
+        "input.type": "log",
+	"log.offset": 1236,
+        "gem.test.name": "sim_ticks",
+        "gem.test.value": 5941500,
+        "service.type": "gem",
+	"container.id": "stats.txt"
+    }
+]

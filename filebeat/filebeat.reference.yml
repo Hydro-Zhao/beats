@@ -110,6 +110,16 @@ filebeat.modules:
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
+#--------------------------------- Gem Module ---------------------------------
+- module: gem
+  # All logs
+  stats:
+    enabled: true
+
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
 #------------------------------- Haproxy Module -------------------------------
 - module: haproxy
   # All logs
