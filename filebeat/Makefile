@@ -26,3 +26,10 @@ create-fileset:
 .PHONY: create-fields
 create-fields:
 	@go run ${ES_BEATS}/filebeat/scripts/generator/fields/main.go --beats_path=$(BEAT_GOPATH)/src/$(BEAT_PATH) --module=$(MODULE) --fileset=$(FILESET)
+
+# this is my own,,,,,,,,
+.PHONY: kibana
+kibana:
+	@rm -rf kibana
+	@mkdir -p kibana/7/dashboard
+	@-cp -pr module/*/_meta/kibana/7/dashboard/* kibana/7/dashboard
