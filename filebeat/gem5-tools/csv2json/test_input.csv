@@ -1,0 +1,8 @@
+final_tick,5941500
+host_inst_rate,360194
+system.cpu.dtb.rdAcessess,1084
+system.cpu.dtb.rdMisses,9
+system.cpu.idle_fraction,0.000000
+system.mem_ctrls.readRowHits,0
+system.membus.snoop_filter.hit_multi_requests,0
+system.cpu.workload.numSyscalls,11
