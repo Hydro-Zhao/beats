@@ -1,0 +1,27 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        },
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
+        "panelsJSON": "[]",
+        "timeRestore": false,
+        "title": "[Filebeat gem] Stats",
+        "version": 1
+      },
+      "id": "52aab000-759b-11ea-950a-89e4f568c946",
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      },
+      "references": [],
+      "type": "dashboard",
+      "updated_at": "2020-04-03T11:07:35.552Z",
+      "version": "WzE4NzU1LDZd"
+    }
+  ],
+  "version": "7.6.1"
+}
