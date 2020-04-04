@@ -11958,16 +11958,7 @@ gem Module
 Please add description
 
 
-*`gem.stats.name`*::
-+
---
-Please add description
-
-example: Please add example
-
---
-
-*`gem.stats.value`*::
+*`gem.stats.message`*::
 +
 --
 Please add description

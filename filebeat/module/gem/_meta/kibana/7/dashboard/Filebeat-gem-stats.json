@@ -10,17 +10,17 @@
         "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
         "panelsJSON": "[]",
         "timeRestore": false,
-        "title": "[Filebeat gem] Stats",
+        "title": "[Filebeat gem] gem5.stats",
         "version": 1
       },
-      "id": "52aab000-759b-11ea-950a-89e4f568c946",
+      "id": "6286a7a0-764e-11ea-950a-89e4f568c946",
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
       "references": [],
       "type": "dashboard",
-      "updated_at": "2020-04-03T11:07:35.552Z",
-      "version": "WzE4NzU1LDZd"
+      "updated_at": "2020-04-04T08:29:22.074Z",
+      "version": "WzE4ODk3LDZd"
     }
   ],
   "version": "7.6.1"

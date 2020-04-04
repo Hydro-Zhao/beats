@@ -28,8 +28,26 @@ create-fields:
 	@go run ${ES_BEATS}/filebeat/scripts/generator/fields/main.go --beats_path=$(BEAT_GOPATH)/src/$(BEAT_PATH) --module=$(MODULE) --fileset=$(FILESET)
 
 # this is my own,,,,,,,,
+.PHONY: dashboard-gem
+dashboard-gem:
+	@./filebeat export dashboard -yml module/gem/module.yml
 .PHONY: kibana-gem
 kibana-gem:
 	@rm -rf kibana
 	@mkdir -p kibana/7/dashboard
 	@-cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
+.PHONY: deploy
+deploy:
+	@rm -f data/registry/filebeat/data.json
+	@curl -X DELETE "localhost:5601/s/gem5/api/saved_objects/index-pattern/gem5-filebeat-*" -H 'kbn-xsrf: true'
+	@make update
+	@cp filebeat.gem.yml filebeat.yml
+	@./filebeat setup
+	@./filebeat modules enable gem
+	@./filebeat -e
+.PHONY: stats
+stats:
+	@make create-fields MODULE=gem FILESET=stats
+.PHONY: config
+config:
+	@make create-fields MODULE=gem FILESET=config

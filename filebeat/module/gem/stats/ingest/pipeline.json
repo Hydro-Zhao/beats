@@ -1,25 +1,5 @@
 {
   "description": "Pipeline for parsing gem stats logs",
-  "processors": [
-	  {
-		  "grok": {
-			  "field": "message",
-			  "patterns": [
-				"%{NOTSPACE:gem.stats.name}%{SPACE}%{NOTSPACE:gem.stats.value}"
-			  ],
-			  "pattern_definitions": {
-				  "Begin_Simulation_Statistics": "^-+%{SPACE}Begin Simulation Statistics%{SPACE}-+%{SPACE}",
-				  "End_Simulation_Statistics": "^-+%{SPACE}End Simulation Statistics%{SPACE}-+%{SPACE}"
-			  },
-			  "ignore_missing": true
-		  }
-	  },
-	  {
-		  "remove": {
-			  "field": "message"
-		  }
-	  }
-    ],
   "on_failure" : [{
     "set" : {
       "field" : "error.message",

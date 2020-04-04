@@ -3,9 +3,6 @@
   example: Please add example
   type: group
   fields:
-  - name: name
-    description: Please add description
-    example: Please add example
-  - name: value
+  - name: message
     description: Please add description
     example: Please add example
