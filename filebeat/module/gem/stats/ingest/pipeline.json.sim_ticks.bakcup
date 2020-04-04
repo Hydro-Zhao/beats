@@ -1,15 +1,17 @@
 {
-  "description": "Pipeline for parsing gem config logs",
+  "description": "Pipeline for parsing gem stats logs",
   "processors": [
 	  {
-		  "gsub": {
+		  "grok": {
 			  "field": "message",
-			  "pattern": "\n",
-			  "replacement": ""
+			  "patterns": [
+				"%{NOTSPACE:gem.test.name}%{SPACE}%{NOTSPACE:gem.test.value}"
+			  ],
+			  "ignore_missing": true
 		  }
 	  },
 	  {
-		  "json": {
+		  "remove": {
 			  "field": "message"
 		  }
 	  }

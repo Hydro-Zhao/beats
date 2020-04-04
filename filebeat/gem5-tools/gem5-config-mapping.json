@@ -1,6 +1,9 @@
 {
   "mappings" : {
     "properties" : {
+      "name" :{
+        "type":"text"
+      },
       "cxx_class" : {
         "type" : "text",
         "fields" : {
@@ -1198,6 +1201,9 @@
           },
           "dvfs_handler" : {
             "properties" : {
+              "domains" : {
+                "type":"text"
+              },
               "cxx_class" : {
                 "type" : "text",
                 "fields" : {
@@ -1274,6 +1280,15 @@
           },
           "kernel_addr_check" : {
             "type" : "boolean"
+          },
+          "kernel_extras":{
+            "type":"text"
+          },
+          "kernel_extras_addrs":{
+            "type":"text"
+          },
+          "kvm_vm":{
+            "type":"text"
           },
           "load_addr_mask" : {
             "type" : "text"
@@ -1781,6 +1796,9 @@
               "point_of_unification" : {
                 "type" : "boolean"
               },
+              "power_model":{
+                "type":"text"
+              },
               "response_latency" : {
                 "type" : "text"
               },
@@ -2047,6 +2065,12 @@
                 }
               }
             }
+          },
+          "thermal_components":{
+            "type":"text"
+          },
+          "thermal_model":{
+            "type":"text"
           },
           "type" : {
             "type" : "text",

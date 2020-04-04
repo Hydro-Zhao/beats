@@ -32,5 +32,5 @@ func init() {
 // AssetGem returns asset data.
 // This is the base64 encoded gzipped contents of module/gem.
 func AssetGem() string {
-	return "eJy0j0EOwiAURPecYtJ9L8DCG5h4BSJjQ4SWlF9jb28wrX61C13IgoTHMP/R4szZomMygASJtGg6psYAnuU4hixh6C12BkDNYT/4KdIAp8Doi71ftOhd4lpUl8y5nsdhygvZ6Hst0UXCIg/49vYQ6QrhvNdcpXl1KdevqOTCVOrTcEvoqVR3hX+V+lZrHXdxcfrfvFsAAAD//x6Vjyw="
+	return "eJy0j0EOwiAQRfec4qf7XoCFNzDxChMZGyIUUgZjb28wrY7ahS5kQcLj8+fR48yzxcDRAOIlsEU3cOwM4LgcJ5/Fp9FiZwC0HPbJ1cAGOHkOrtj7RY+RIq9Fbcmc23lKNS9ko++1RBcVISkP+vb4EJgKg5zTXKX5SjG3v6jkwlTqU3HL6OnUdoV/lfpWax13oVD/N+8WAAD//+HVj5s="
 }

@@ -5,5 +5,13 @@ paths:
 {{ end }}
 exclude_files: [".gz$"]
 
-json.keys_under_root: false
-json.add_error_key: true
+#json:
+#  keys_under_root: true 
+#  overwrite_keys: true
+#  add_error_key: true
+#  document_id: true
+
+multiline:
+  pattern: '^(\[?[0-9]{4}-[0-9]{2}-[0-9]{2}|{)'
+  negate: true
+  match: after

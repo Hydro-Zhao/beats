@@ -120,6 +120,9 @@ filebeat.modules:
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
+  config:
+    enable: true
+
 #------------------------------- Haproxy Module -------------------------------
 - module: haproxy
   # All logs

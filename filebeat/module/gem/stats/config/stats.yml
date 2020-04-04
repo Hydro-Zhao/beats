@@ -4,4 +4,22 @@ paths:
  - {{$path}}
 {{ end }}
 exclude_files: [".gz$"]
-include_lines: ["^sim_ticks"]
+
+#exclude_lines: ['^-']
+#exclude_lines: ['^\s']
+#include_lines: ["^sim_ticks"]
+
+multiline.pattern: '^-+[\s]*Begin Simulation Statistics[\s]*-+'
+multiline.negate: true
+multiline.match: after
+multiline.flush_pattern: '^-+[\s]*End Simulation Statistics[\s]*-+'
+
+harvester_buffer_size: 70000
+
+close_eof: true
+#clean_inactive: 3s
+clean_removed: true
+
+#fields
+#tags
+#index

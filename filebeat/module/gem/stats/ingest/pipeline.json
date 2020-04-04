@@ -5,8 +5,12 @@
 		  "grok": {
 			  "field": "message",
 			  "patterns": [
-				"%{NOTSPACE:gem.test.name}%{SPACE}%{NOTSPACE:gem.test.value}"
+				"%{NOTSPACE:gem.stats.name}%{SPACE}%{NOTSPACE:gem.stats.value}"
 			  ],
+			  "pattern_definitions": {
+				  "Begin_Simulation_Statistics": "^-+%{SPACE}Begin Simulation Statistics%{SPACE}-+%{SPACE}",
+				  "End_Simulation_Statistics": "^-+%{SPACE}End Simulation Statistics%{SPACE}-+%{SPACE}"
+			  },
 			  "ignore_missing": true
 		  }
 	  },

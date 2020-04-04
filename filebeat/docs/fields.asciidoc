@@ -11953,12 +11953,12 @@ gem Module
 
 
 [float]
-=== test
+=== stats
 
 Please add description
 
 
-*`gem.test.name`*::
+*`gem.stats.name`*::
 +
 --
 Please add description
@@ -11967,7 +11967,7 @@ example: Please add example
 
 --
 
-*`gem.test.value`*::
+*`gem.stats.value`*::
 +
 --
 Please add description

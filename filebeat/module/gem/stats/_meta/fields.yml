@@ -1,4 +1,4 @@
-- name: test
+- name: stats
   description: Please add description
   example: Please add example
   type: group
