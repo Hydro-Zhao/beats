@@ -7,5 +7,5 @@ var:
     os.darwin: []
     os.windowsl: []
 
-ingest_pipeline: ingest/pipeline.json
+#ingest_pipeline: ingest/pipeline.json
 input: config/config.yml

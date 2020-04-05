@@ -1,6 +1,18 @@
 {
   "description": "Pipeline for parsing gem config logs",
   "processor" : [
+      {
+          "json": {
+              "field":"message",
+              "target_field":"gem5.config"
+          }
+      },
+      {
+          "remove": {
+              "field":"message",
+              "ignore_missing":true
+          }
+      }
   ],
   "on_failure" : [{
     "set" : {
