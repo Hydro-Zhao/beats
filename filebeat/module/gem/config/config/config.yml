@@ -4,7 +4,7 @@ paths:
  - {{$path}}
 {{ end }}
 
-harvester_buffer_size: 100000 
+harvester_buffer_size: 200000 
 
 close_eof: true
 #clean_inactive: 3s
@@ -24,17 +24,25 @@ multiline:
   match: after
   flush_pattern: '^}'
 
-  
 processors:
 - script:
     lang: javascript
     id: gem_config
     source: >
       function process(event) {
-          var gemConfigMessage = event.Get("event.message");
-          if (gemConfigMessage !== null) {
-              gemConfigMessage = gemConfigMessage
-          }
-          event.Delete("event.message");
-          event.Put("event.message", gemConfigMessage);
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
+          var gemConfigMessage = event.Get("message");
+          gemConfigMessage = gemConfigMessage.replace(/\s*/g,"");
+          event.Delete("message");
+          event.Put("message", gemConfigMessage);
       }

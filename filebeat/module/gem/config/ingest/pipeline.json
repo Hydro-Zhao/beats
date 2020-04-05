@@ -1,12 +1,6 @@
 {
   "description": "Pipeline for parsing gem config logs",
-  "processors": [
-	  {
-		  "json": {
-			  "field": "message",
-			  "target_field": "gem5.config"
-		  }
-	  }
+  "processor" : [
   ],
   "on_failure" : [{
     "set" : {

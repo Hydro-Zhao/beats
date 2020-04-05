@@ -1,3 +1,5 @@
 dashboards:
 - id: 6286a7a0-764e-11ea-950a-89e4f568c946 
   file: Filebeat-gem-stats.json
+- id: Filebeat-gem-testfileset-Dashboard
+  file: Filebeat-gem-testfileset.json

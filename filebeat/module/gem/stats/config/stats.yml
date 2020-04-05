@@ -27,18 +27,30 @@ processors:
     id: gem_stats
     source: >
       function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
           var gemStatsMessage = event.Get("message");
-          if (gemStatsMessage !== null) {
-              var lines = gemStatsMessage.split('\n');
-              for(var line in lines) {
-                  if(line[0] != "-") {
+          var lines = gemStatsMessage.split(/\n/);
+          for(var lineNum=0; lineNum<lines.length; ++lineNum) {
+              var line = lines[lineNum];
+              if(line.length != 0) {
+                  if(line[0]<"z" && line[0]>"a") {
                       var pos = line.indexOf("#");
                       line = line.slice(0, pos);
-                      line = line.split(/[\s]+/);
+                      line = line.split(/\s+/);
                       var name = line[0];
                       name = "gem5.stats." + name;
-                      for(var i=1;i<line.length-2;++i) {
-                          event.AppendTo(name, line[i]);
+                      for(var j=1; j<line.length-1; ++j) {
+                          event.AppendTo(name, line[j]);
                       }
                   }
               }

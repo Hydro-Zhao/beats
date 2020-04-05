@@ -11951,22 +11951,6 @@ gem Module
 
 
 
-
-[float]
-=== stats
-
-Please add description
-
-
-*`gem.stats.message`*::
-+
---
-Please add description
-
-example: Please add example
-
---
-
 [[exported-fields-googlecloud]]
 == Google Cloud fields
 

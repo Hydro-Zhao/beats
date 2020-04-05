@@ -1,5 +1,7 @@
 {
   "description": "Pipeline for parsing gem stats logs",
+  "processor" : [
+  ],
   "on_failure" : [{
     "set" : {
       "field" : "error.message",

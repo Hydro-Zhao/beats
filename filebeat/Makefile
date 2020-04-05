@@ -40,7 +40,8 @@ kibana-gem:
 deploy:
 	@rm -f data/registry/filebeat/data.json
 	@curl -X DELETE "localhost:5601/s/gem5/api/saved_objects/index-pattern/gem5-filebeat-*" -H 'kbn-xsrf: true'
-	@make update
+	#@make update
+	@cp fields.gem.yml fields.yml
 	@cp filebeat.gem.yml filebeat.yml
 	@./filebeat setup
 	@./filebeat modules enable gem

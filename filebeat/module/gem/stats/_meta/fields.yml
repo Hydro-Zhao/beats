@@ -1,8 +1,0 @@
-- name: stats
-  description: Please add description
-  example: Please add example
-  type: group
-  fields:
-  - name: message
-    description: Please add description
-    example: Please add example
