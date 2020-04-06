@@ -10,6 +10,9 @@
 # For more available modules and options, please see the filebeat.reference.yml sample
 # configuration file.
 
+#========================= Filebeat global options ============================
+filebeat.shutdown_timeout: 2s
+
 #=========================== Filebeat inputs =============================
 
 filebeat.inputs:

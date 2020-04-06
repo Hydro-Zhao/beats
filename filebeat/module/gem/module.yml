@@ -3,3 +3,5 @@ dashboards:
   file: Filebeat-gem-stats.json
 - id: Filebeat-gem-testfileset-Dashboard
   file: Filebeat-gem-testfileset.json
+- id: Filebeat-gem-pipeview-Dashboard
+  file: Filebeat-gem-pipeview.json

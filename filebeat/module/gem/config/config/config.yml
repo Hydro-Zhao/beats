@@ -7,16 +7,8 @@ paths:
 harvester_buffer_size: 200000 
 
 close_eof: true
-#clean_inactive: 3s
 clean_removed: true
-
 exclude_files: [".gz$"]
-
-#json:
-#  keys_under_root: true 
-#  overwrite_keys: true
-#  add_error_key: true
-#  document_id: true
 
 multiline:
   pattern: '^{'
@@ -51,5 +43,11 @@ processors:
 - decode_json_fields:
     fields: ["gem5.config"]
     process_array: true
-    max_depth: 10
+    max_depth: 9
+    overwrite_keys: true
+# I do not know whether the following processor works, may be not, but I just keep them
+- decode_json_fields:
+    fields: ["gem5.config.system.cpu","gem5.config.system.mem_ctrls","gem5.config.system.redirect_paths"]
+    process_array: true
+    max_depth: 9
     overwrite_keys: true
