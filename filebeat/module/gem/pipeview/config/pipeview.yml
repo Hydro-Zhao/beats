@@ -34,8 +34,8 @@ processors:
               // be aware of that the time of the last event may not be "retire" if the instruction is not comlpeted.
               if (fields[0] == "O3PipeView") {
                   if (fields[1] == "fetch") {
-                      inst["start_tick"] = Number(fields[2]);
-                      inst["end_tick"] = Number(fields[2]);
+                      inst["start_tick"] = Number(fields[2])/500;
+                      inst["end_tick"] = Number(fields[2])/500;
       
                       inst["pc_upc"] = fields[3] + fields[4];
                       inst["seq_num"] = Number(fields[5]);
@@ -43,30 +43,30 @@ processors:
                       inst["disasm_assembly"] = fields[7];
                   } else if (fields[1] == "decode") {
                       if (fields[2] != 0) {
-                          inst["fetch"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["fetch"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                       }
                   } else if (fields[1] == "rename") {
                       if (fields[2] != 0) {
-                          inst["decode"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["decode"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                       }
                   } else if (fields[1] == "dispatch") {
                       if (fields[2] != 0) {
-                          inst["rename"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["rename"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                       }
                   } else if (fields[1] == "issue") {
                       // only can issue == dispatch(conclude from o3-pipeview.py)
                       // maybe I can add a field to indicate this.
                       if (fields[2] != 0) {
-                          inst["dispatch"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["dispatch"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                       }
                   } else if (fields[1] == "complete") {
                       if (fields[2] != 0) {
-                          inst["issue"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["issue"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                       }
                   } else if (fields[1] == "retire") {
                       // This will distinguish completed and abandoned intructions.
@@ -75,15 +75,15 @@ processors:
                       } else {
                           inst["abandoned_instuction"] = false;
       
-                          inst["complete"] = Number(fields[2]) - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2]);
+                          inst["complete"] = Number(fields[2])/500 - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2])/500;
                           // do not include store stage
-                          //inst["end_tick"] = Number(fields[2]);// retire
+                          //inst["end_tick"] = Number(fields[2])/500;// retire
       
                           // according to o3-pipeview.py, the width of the last stage will always be 1(*cycle-time), here, I assume that be 500
                           // however, I assume that the tick of store - the tick of retire is the tick spent on store
-                          //inst["store"] = Number(fields[4]) - Number(fields[2]);
-                          inst["store"] = Number(fields[4]);
+                          //inst["store"] = Number(fields[4])/500 - Number(fields[2])/500;
+                          inst["store"] = Number(fields[4])/500;
                       }
                   }
               }
