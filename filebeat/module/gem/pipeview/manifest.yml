@@ -3,11 +3,14 @@ module_version: 1.0
 var:
   - name: paths
     default:
-      - /example/test.log*
-    os.darwin:
-      - /usr/local/example/test.log*
-    os.windows:
-      - c:/programdata/example/logs/test.log*
+      - ${GEM5_PATH:?the GEM5_PATH is not set}/m5out/O3PipeView.out
+    os.darwin: []
+    os.windows: []
 
-ingest_pipeline: ingest/pipeline.json
-input: config/pipeview.yml
+#ingest_pipeline: ingest/pipeline.json
+input: config/stats.yml
+
+var:
+    # this is used for javascript; however, it is not used now, maybe latter
+  - name: cycle-time
+    default: 1000

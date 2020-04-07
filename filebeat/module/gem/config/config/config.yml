@@ -14,8 +14,9 @@ multiline:
   pattern: '^{'
   negate: true
   match: after
-  max_lines: 1000
-  timeout: 10s
+  #max_lines: 1000
+  flush_pattern: '^}'
+  #timeout: 10s
 
 processors:
 - script:

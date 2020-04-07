@@ -4,3 +4,17 @@ paths:
  - {{$path}}
 {{ end }}
 exclude_files: [".gz$"]
+
+close_eof: true
+clean_removed: true
+
+multiline.pattern: '^O3PipeView:fetch'
+multiline.negate: true
+multiline.match: after
+multiline.flush_pattern: '^O3PipeView:retire'
+
+processors:
+- script:
+    lang: javascript
+    id: gem_pipeview
+    source: ${path.config}/filter.js
