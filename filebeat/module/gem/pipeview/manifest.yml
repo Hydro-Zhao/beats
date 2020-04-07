@@ -8,9 +8,4 @@ var:
     os.windows: []
 
 #ingest_pipeline: ingest/pipeline.json
-input: config/stats.yml
-
-var:
-    # this is used for javascript; however, it is not used now, maybe latter
-  - name: cycle-time
-    default: 1000
+input: config/pipeview.yml

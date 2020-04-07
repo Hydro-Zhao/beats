@@ -58,10 +58,12 @@ deploy:
 .PHONY: stats
 stats:
 	@make create-fields MODULE=gem FILESET=stats
-
 .PHONY: config
 config:
 	@make create-fields MODULE=gem FILESET=config
+.PHONY: pipeview
+pipeview:
+	@make create-fields MODULE=gem FILESET=pipeview
 
 #TODO remove other modules under module folder, other config files under modules.d, and other dashboards
 .PHONY: small
