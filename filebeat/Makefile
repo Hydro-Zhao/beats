@@ -29,43 +29,24 @@ create-fields:
 
 
 
-
-
-
-
 # this is my own,,,,,,,,
-.PHONY: dashboard-gem
-dashboard-gem:
-	@./filebeat export dashboard -yml module/gem/module.yml
-
 .PHONY: kibana-gem
 kibana-gem:
-	@rm -rf kibana
-	@mkdir -p kibana/7/dashboard
-	@-cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
-
-.PHONY: deploy
-deploy:
-	@rm -f data/registry/filebeat/data.json
-	#@curl -X DELETE "localhost:5601/s/gem5/api/saved_objects/index-pattern/gem5-filebeat-*" -H 'kbn-xsrf: true'
-	@make update
-	@cp fields.gem.yml fields.yml
-	@cp filebeat.gem.yml filebeat.yml
-	@./filebeat setup
-	@./filebeat modules enable gem
-	@./filebeat -e
+	rm -rf kibana
+	mkdir -p kibana/7/dashboard
+	cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
 
 .PHONY: stats
 stats:
-	@make create-fields MODULE=gem FILESET=stats
+	make create-fields MODULE=gem FILESET=stats
 .PHONY: config
 config:
-	@make create-fields MODULE=gem FILESET=config
+	make create-fields MODULE=gem FILESET=config
 .PHONY: pipeview
 pipeview:
-	@make create-fields MODULE=gem FILESET=pipeview
+	make create-fields MODULE=gem FILESET=pipeview
 
 #TODO remove other modules under module folder, other config files under modules.d, and other dashboards
 .PHONY: small
 small:
-	@make kibana-gem
+	make kibana-gem

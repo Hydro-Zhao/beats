@@ -5,10 +5,10 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
-        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
-        "panelsJSON": "[]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"c28db419-56b8-4fb2-b64e-24e14ccdde9a\"},\"panelIndex\":\"c28db419-56b8-4fb2-b64e-24e14ccdde9a\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] Stats",
         "version": 1
@@ -17,10 +17,42 @@
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
-      "references": [],
+      "references": [
+        {
+          "id": "57edea40-79b6-11ea-950a-89e4f568c946",
+          "name": "panel_0",
+          "type": "visualization"
+        }
+      ],
       "type": "dashboard",
-      "updated_at": "2020-04-03T11:07:35.552Z",
-      "version": "WzE4NzU1LDZd"
+      "updated_at": "2020-04-08T16:34:34.700Z",
+      "version": "WzE5NjU1LDZd"
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"gem5.pipeview.fetch : * \",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "fetch numbers [Filbeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"fetch numbers [Filbeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}"
+      },
+      "id": "57edea40-79b6-11ea-950a-89e4f568c946",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "a357c7c0-79b2-11ea-950a-89e4f568c946",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-08T16:31:05.444Z",
+      "version": "WzE5NjU0LDZd"
     }
   ],
   "version": "7.6.1"

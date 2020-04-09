@@ -17,13 +17,22 @@ processors:
 - script:
     lang: javascript
     id: gem_pipeview
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
       function process(event) {
           event.Delete("event.module");
           event.Delete("input.type");
           event.Delete("log.flags");
           event.Delete("fileset.name");
           event.Delete("service.type");
+
+          //m5outTime = new Date(m5outTime).toISOString();
+          event.Put("event.timestamp", m5outTime);
 
           var lines = event.Get("message");
           var lines = lines.split(/\n/);
@@ -71,9 +80,9 @@ processors:
                   } else if (fields[1] == "retire") {
                       // This will distinguish completed and abandoned intructions.
                       if (fields[2] == 0) {
-                          inst["abandoned_instuction"] = true;
+                          inst["abandoned_instuction"] = "true";
                       } else {
-                          inst["abandoned_instuction"] = false;
+                          inst["abandoned_instuction"] = "false";
       
                           inst["complete"] = Number(fields[2])/500 - inst["end_tick"];
                           inst["end_tick"] = Number(fields[2])/500;
@@ -112,3 +121,11 @@ processors:
       
           event.Delete("message");
       }
+- timestamp:
+    field: event.timestamp
+    layouts:
+      - 'Mon Jan _2 15:04:05 MST 2006'
+    test:
+      - 'Tue Mar 31 19:19:59 CST 2020'
+- drop_fields:
+    fields: event.timestamp

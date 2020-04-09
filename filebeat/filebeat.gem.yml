@@ -11,7 +11,7 @@
 # configuration file.
 
 #========================= Filebeat global options ============================
-filebeat.shutdown_timeout: 2s
+filebeat.overwrite_pipelines: true
 
 #=========================== Filebeat inputs =============================
 
@@ -85,10 +85,7 @@ setup.template:
   name: "gem5-filebeat"
   pattern: "gem5-filebeat-*"
   overwrite: true
-  settings:
-    index.number_of_shards: 1
-  #index.codec: best_compression
-  #_source.enabled: false
+  fields: "${path.config}/fields.gem.yml}"
 
 #============================== Setup ILM =====================================
 
@@ -117,7 +114,7 @@ setup.ilm.enabled: false
 setup.dashboards:
   enabled: true 
   beat: filebeat
-  index: "gem5-filebeat-*"
+  index: "gem5-filebeat-${M5OUT_MODIFICATION_TIME}"
   retry:
     enabled: true 
     interval: 1s
@@ -162,7 +159,7 @@ setup.kibana:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["localhost:9200"]
-  index: "gem5-filebeat-%{[agent.version]}-%{+yyyy.MM.dd}"
+  index: "gem5-filebeat-${M5OUT_MODIFICATION_TIME}"
 
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"

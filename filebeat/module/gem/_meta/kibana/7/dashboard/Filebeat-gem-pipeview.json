@@ -5,22 +5,22 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
         },
-        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
         "panelsJSON": "[]",
         "timeRestore": false,
-        "title": "[Filebeat gem] Stats",
+        "title": "[Filebeat gem] Pipeview",
         "version": 1
       },
-      "id": "52aab000-759b-11ea-950a-89e4f568c946",
+      "id": "6d478cd0-7a41-11ea-950a-89e4f568c946",
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
       "references": [],
       "type": "dashboard",
-      "updated_at": "2020-04-09T09:47:37.449Z",
-      "version": "WzE5ODcwLDZd"
+      "updated_at": "2020-04-09T09:06:41.309Z",
+      "version": "WzE5ODY5LDZd"
     }
   ],
   "version": "7.6.1"

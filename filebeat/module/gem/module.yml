@@ -1,7 +1,5 @@
 dashboards:
-- id: 6286a7a0-764e-11ea-950a-89e4f568c946 
+- id: 52aab000-759b-11ea-950a-89e4f568c946 
   file: Filebeat-gem-stats.json
-- id: Filebeat-gem-testfileset-Dashboard
-  file: Filebeat-gem-testfileset.json
-- id: Filebeat-gem-pipeview-Dashboard
+- id: 6d478cd0-7a41-11ea-950a-89e4f568c946
   file: Filebeat-gem-pipeview.json

@@ -22,7 +22,13 @@ processors:
 - script:
     lang: javascript
     id: gem_config
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
       function process(event) {
           event.Delete("event.module");
           event.Delete("input.type");
@@ -34,6 +40,9 @@ processors:
           //ecs.version is added after beats event
           //event.Delete("ecs.version");
           //event.Delete("host.name");
+
+          //m5outTime = new Date(m5outTime).toISOString();
+          event.Put("event.timestamp", m5outTime);
 
           var gemConfigMessage = event.Get("message");
           event.Delete("message");
@@ -52,3 +61,11 @@ processors:
     process_array: true
     max_depth: 9
     overwrite_keys: true
+- timestamp:
+    field: event.timestamp
+    layouts:
+      - 'Mon Jan _2 15:04:05 MST 2006'
+    test:
+      - 'Tue Mar 31 19:19:59 CST 2020'
+- drop_fields:
+    fields: event.timestamp
