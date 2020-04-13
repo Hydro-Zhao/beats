@@ -1,0 +1,31 @@
+- name: pipeview
+  type: group
+  fields:
+    - name: complete
+      type: long
+    - name: decode
+      type: long
+    - name: disasm_assembly
+      type: keyword
+    - name: disasm_instruction
+      type: keyword
+    - name: dispatch
+      type: long
+    - name: end_tick
+      type: long
+    - name: fetch
+      type: long
+    - name: issue
+      type: long
+    - name: pc_upc
+      type: keyword
+    - name: rename
+      type: long
+    - name: seq_num
+      type: long
+    - name: start_tick
+      type: long
+    - name: store
+      type: long
+    - name: abandoned_instuction
+      type: boolean

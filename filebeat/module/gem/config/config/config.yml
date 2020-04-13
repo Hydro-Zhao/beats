@@ -14,8 +14,8 @@ multiline:
   pattern: '^{'
   negate: true
   match: after
-  #max_lines: 1000
-  flush_pattern: '^}'
+  max_lines: 2000
+  #flush_pattern: '^}'
   #timeout: 10s
 
 processors:
@@ -49,18 +49,19 @@ processors:
           gemConfigMessage = gemConfigMessage + "}";
           gemConfigMessage = gemConfigMessage.replace(/\s*/g,"");
           event.Put("gem5.config", gemConfigMessage);
+
+          event.Rename("@timestamp", "event.timestamp");
       }
 - decode_json_fields:
     fields: ["gem5.config"]
     process_array: true
-    max_depth: 9
+    max_depth: 15
     overwrite_keys: true
-# I do not know whether the following processor works, may be not, but I just keep them
-- decode_json_fields:
-    fields: ["gem5.config.system.cpu","gem5.config.system.mem_ctrls","gem5.config.system.redirect_paths"]
-    process_array: true
-    max_depth: 9
-    overwrite_keys: true
+#- decode_json_fields:
+#    fields: ["gem5.config.system.cpu","gem5.config.system.mem_ctrls","gem5.config.system.redirect_paths"]
+#    process_array: true
+#    max_depth: 15
+#    overwrite_keys: true
 - timestamp:
     field: event.timestamp
     layouts:

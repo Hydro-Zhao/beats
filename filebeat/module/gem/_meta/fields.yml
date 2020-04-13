@@ -1,9 +1,9 @@
 - key: gem
-  title: "gem"
+  title: "gem5"
   description: >
     gem Module
   fields:
-    - name: gem
+    - name: gem5
       type: group
       description: >
       fields:

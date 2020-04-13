@@ -6,9 +6,6 @@ var:
       - ${GEM5_PATH:?the GEM5_PATH is not set}/m5out/config.json
     os.darwin: []
     os.windowsl: []
-  - name: m5out_time
-    default:
-      - ${M5OUT_MODIFICATION_TIME:?the M5OUT_MODIFICATION_TIME is not set properly}
 
 #ingest_pipeline: ingest/pipeline.json
 input: config/config.yml

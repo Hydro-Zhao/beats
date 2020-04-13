@@ -1,6 +1,6 @@
 {
   "description": "Pipeline for parsing gem stats logs",
-  "processor" : [
+  "processors" : [
   ],
   "on_failure" : [{
     "set" : {

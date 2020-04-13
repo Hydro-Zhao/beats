@@ -85,7 +85,7 @@ setup.template:
   name: "gem5-filebeat"
   pattern: "gem5-filebeat-*"
   overwrite: true
-  fields: "${path.config}/fields.gem.yml}"
+  #fields: "${path.config}/fields.yml}"
 
 #============================== Setup ILM =====================================
 

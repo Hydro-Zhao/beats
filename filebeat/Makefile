@@ -30,23 +30,23 @@ create-fields:
 
 
 # this is my own,,,,,,,,
-.PHONY: kibana-gem
-kibana-gem:
+.PHONY: gem5-kibana
+gem5-kibana:
 	rm -rf kibana
 	mkdir -p kibana/7/dashboard
 	cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
 
-.PHONY: stats
-stats:
+.PHONY: gem5-stats
+gem5-stats:
 	make create-fields MODULE=gem FILESET=stats
-.PHONY: config
-config:
+.PHONY: gem5-config
+gem5-config:
 	make create-fields MODULE=gem FILESET=config
-.PHONY: pipeview
+.PHONY: gem5-pipeview
 pipeview:
 	make create-fields MODULE=gem FILESET=pipeview
 
 #TODO remove other modules under module folder, other config files under modules.d, and other dashboards
-.PHONY: small
-small:
+.PHONY: gem5-small
+gem5-small:
 	make kibana-gem

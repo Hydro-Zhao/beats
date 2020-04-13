@@ -1,16 +1,19 @@
 {
   "description": "Pipeline for parsing gem config logs",
-  "processor" : [
+  "processors" : [
       {
           "json": {
-              "field":"message",
-              "target_field":"gem5.config"
+              "field":"gem5.config.system.cpu"
           }
       },
       {
-          "remove": {
-              "field":"message",
-              "ignore_missing":true
+          "json": {
+              "field":"gem5.config.system.mem_ctrls"
+          }
+      },
+      {
+          "json": {
+              "field":"gem5.config.system.redirect_paths"
           }
       }
   ],

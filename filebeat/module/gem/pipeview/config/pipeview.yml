@@ -119,6 +119,7 @@ processors:
           event.Put("gem5.pipeview.abandoned_instuction", inst["stages"]);
           event.Put("gem5.pipeview.abandoned_instuction", inst["stages"]);
       
+          event.Rename("@timestamp", "event.timestamp");
           event.Delete("message");
       }
 - timestamp:

@@ -11940,16 +11940,3610 @@ type: keyword
 --
 
 [[exported-fields-gem]]
-== gem fields
+== gem5 fields
 
 gem Module
 
 
 
 [float]
-=== gem
+=== gem5
 
 
+
+
+
+*`gem5.pipeview.complete`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.decode`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.disasm_assembly`*::
++
+--
+type: keyword
+
+--
+
+*`gem5.pipeview.disasm_instruction`*::
++
+--
+type: keyword
+
+--
+
+*`gem5.pipeview.dispatch`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.end_tick`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.fetch`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.issue`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.pc_upc`*::
++
+--
+type: keyword
+
+--
+
+*`gem5.pipeview.rename`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.seq_num`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.start_tick`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.store`*::
++
+--
+type: long
+
+--
+
+*`gem5.pipeview.abandoned_instuction`*::
++
+--
+type: boolean
+
+--
+
+
+*`gem5.stats.final_tick`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.host_inst_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.host_mem_usage`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.host_op_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.host_seconds`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.host_tick_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.sim_freq`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.sim_insts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.sim_ops`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.sim_seconds`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.sim_ticks`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.clk_domain.clock`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.BTBCorrect`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.BTBHitPct`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.BTBHits`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.BTBLookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.RASInCorrect`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.condIncorrect`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.condPredicted`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.indirectHits`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.indirectLookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.indirectMisses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.lookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPred.usedRAS`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.branchPredindirectMispredicted`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.cc_regfile_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.cc_regfile_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.amos`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.branchMispredicts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.branches`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.bw_lim_events`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.commitNonSpecStalls`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.commitSquashedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committedOps`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::0`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::1`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::4`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::5`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::6`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::7`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::8`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::max_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::mean`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::min_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::overflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::stdev`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.committed_per_cycle::underflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.fp_insts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.function_calls`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.int_insts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.loads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.membars`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatMemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatMemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::FloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::InstPrefetch`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::IntAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::IntDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::IntMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::IprAccess`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::MemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::MemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::No_OpClass`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdAddAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdAes`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdAesMix`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdFloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdPredAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdReduceAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdSha1Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdSha1Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdSha256Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdSha256Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdShaSigma2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdShaSigma3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdShift`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdShiftAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::SimdSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.commit.op_class_0::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.refs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.swp_count`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.commit.vec_insts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.committedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.committedOps`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.cpi`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.cpi_total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.BlockedCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.DecodedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.IdleCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.RunCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.SquashCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.decode.UnblockCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.dtb.rdAccesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.dtb.rdMisses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.dtb.wrAccesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.dtb.wrMisses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.Branches`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.CacheLines`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.Cycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.IcacheSquashes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.Insts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.MiscStallCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.PendingQuiesceStallCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.PendingTrapStallCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.SquashCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.branchRate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.icacheStallCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.predictedBranches`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::0`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::1`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::4`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::5`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::6`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::7`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::8`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::max_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::mean`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::min_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::overflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::stdev`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.fetch.rateDist::underflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.fp_regfile_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.idleCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.branchMispredicts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_branches`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_nop`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_refs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_stores`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.exec_swp`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewBlockCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewDispLoadInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewDispNonSpecInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewDispSquashedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewDispStoreInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewDispatchedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewExecLoadInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewExecSquashedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewExecutedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewIQFullEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewIdleCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewLSQFullEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewSquashCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.iewUnblockCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.blockedLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.cacheBlocked`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.forwLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.ignoredResponses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.invAddrLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.invAddrSwpfs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.memOrderViolation`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.rescheduledLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.squashedLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.lsq.thread0.squashedStores`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.memOrderViolationEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.predictedNotTakenIncorrect`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.predictedTakenIncorrect`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_consumers`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_count`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_fanout`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_producers`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iew.wb_sent`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.int_regfile_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.int_regfile_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.ipc`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.ipc_total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatMemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatMemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::FloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::InstPrefetch`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::IntAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::IntDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::IntMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::IprAccess`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::MemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::MemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::No_OpClass`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdAddAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdAes`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdAesMix`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdFloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdPredAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdReduceAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdSha1Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdSha1Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdSha256Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdSha256Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdShaSigma2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdShaSigma3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdShift`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdShiftAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::SimdSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.FU_type_0::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fp_alu_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fp_inst_queue_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fp_inst_queue_wakeup_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fp_inst_queue_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_busy_cnt`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_busy_rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatMemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatMemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::FloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::InstPrefetch`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::IntAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::IntDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::IntMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::IprAccess`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::MemRead`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::MemWrite`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::No_OpClass`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdAddAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdAes`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdAesMix`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatCvt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatDiv`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdFloatSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdMisc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdMult`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdMultAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdPredAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdReduceAdd`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdReduceAlu`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdReduceCmp`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdSha1Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdSha1Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdSha256Hash`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdSha256Hash2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdShaSigma2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdShaSigma3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdShift`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdShiftAcc`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.fu_full::SimdSqrt`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.int_alu_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.int_inst_queue_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.int_inst_queue_wakeup_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.int_inst_queue_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqInstsAdded`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqInstsIssued`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqNonSpecInstsAdded`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqSquashedInstsExamined`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqSquashedInstsIssued`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqSquashedNonSpecRemoved`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.iqSquashedOperandsExamined`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::0`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::1`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::4`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::5`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::6`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::7`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::8`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::max_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::mean`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::min_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::overflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::stdev`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.issued_per_cycle::underflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.cpu.iq.rate`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.vec_alu_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.vec_inst_queue_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.vec_inst_queue_wakeup_accesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.iq.vec_inst_queue_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.itb.rdAccesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.itb.rdMisses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.itb.wrAccesses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.itb.wrMisses`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.memDep0.conflictingLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.memDep0.conflictingStores`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.memDep0.insertedLoads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.memDep0.insertedStores`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.misc_regfile_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.misc_regfile_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.numCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.numWorkItemsCompleted`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.numWorkItemsStarted`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.BlockCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.CommittedMaps`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.IQFullEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.IdleCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.ROBFullEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.RenameLookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.RenamedInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.RenamedOperands`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.RunCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.SQFullEvents`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.SquashCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.UnblockCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.UndoneMaps`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.fp_rename_lookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.int_rename_lookups`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.serializeStallCycles`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.serializingInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.skidInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rename.tempSerializingInsts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rob.rob_reads`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.rob.rob_writes`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.timesIdled`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu.workload.numSyscalls`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.cpu_voltage_domain.voltage`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.avgPriority_.cpu.data::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.avgPriority_.cpu.inst::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.avgPriority_.writebacks::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.avgRdQLen`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.avgWrQLen`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_inst_read::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_inst_read::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_read::.cpu.data`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_read::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_read::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_total::.cpu.data`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_total::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bw_total::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bytes_inst_read::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bytes_inst_read::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bytes_read::.cpu.data`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bytes_read::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.bytes_read::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.mergedWrBursts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.neitherReadNorWriteReqs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.numReadWriteTurnArounds`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.numStayReadState`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.numStayWriteState`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.numWriteReadTurnArounds`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.num_reads::.cpu.data`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.num_reads::.cpu.inst`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.num_reads::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::0`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::1`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::10`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::11`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::12`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::13`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::14`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::15`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::2`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::3`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::4`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::5`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::6`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::7`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::8`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankRdBursts::9`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::0`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::1`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::10`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::11`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::12`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::13`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::14`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::15`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::2`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::3`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::4`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::5`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::6`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::7`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::8`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.perBankWrBursts::9`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.priorityMaxLatency`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.priorityMinLatency`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.pwrStateResidencyTicks::UNDEFINED`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.readBursts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.readReqs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.servicedByWrQ`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.writeBursts`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.mem_ctrls.writeReqs`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_count::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_count_system.cpu.dcache.mem_side::system.mem_ctrls.port`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_count_system.cpu.dcache.mem_side::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_count_system.cpu.icache.mem_side::system.mem_ctrls.port`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_count_system.cpu.icache.mem_side::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_size::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_size_system.cpu.dcache.mem_side::system.mem_ctrls.port`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_size_system.cpu.dcache.mem_side::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_size_system.cpu.icache.mem_side::system.mem_ctrls.port`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pkt_size_system.cpu.icache.mem_side::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.pwrStateResidencyTicks::UNDEFINED`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.reqLayer2.occupancy`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.reqLayer2.utilization`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.respLayer1.occupancy`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.respLayer1.utilization`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.respLayer2.occupancy`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.respLayer2.utilization`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoopTraffic`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::0`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::1`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::2`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::3`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::4`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::max_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::mean`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::min_value`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::overflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::samples`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::stdev`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::total`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_fanout::underflows`*::
++
+--
+type: text
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.hit_multi_requests`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.hit_multi_snoops`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.hit_single_requests`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.hit_single_snoops`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.tot_requests`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoop_filter.tot_snoops`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.snoops`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::ReadCleanReq`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::ReadExReq`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::ReadExResp`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::ReadResp`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::ReadSharedReq`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.membus.trans_dist::WritebackClean`*::
++
+--
+type: long
+
+--
+
+*`gem5.stats.system.voltage_domain.voltage`*::
++
+--
+type: long
+
+--
 
 [[exported-fields-googlecloud]]
 == Google Cloud fields

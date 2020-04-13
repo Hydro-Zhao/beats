@@ -58,16 +58,17 @@ processors:
                       line = line.split(/\s+/);
                       var name = line[0];
                       name = "gem5.stats." + name;
-                      for(var j=1; j<line.length-1; ++j) {
-                          if (isNaN(line[j])) {
+                      if (line.length == 2) {
+                          event.Put(name, Number(line[1]));
+                      } else {
+                          for(var j=1; j<line.length-1; ++j) {
                               event.AppendTo(name, line[j]);
-                          } else {
-                              event.AppendTo(name, Number(line[j]));
-                          }
+                          } 
                       }
                   }
               }
           }
+          event.Rename("@timestamp", "event.timestamp");
           event.Delete("message");
       }
 - timestamp:

@@ -110,7 +110,7 @@ filebeat.modules:
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
-#--------------------------------- Gem Module ---------------------------------
+#--------------------------------- Gem5 Module ---------------------------------
 - module: gem
   # All logs
   stats:

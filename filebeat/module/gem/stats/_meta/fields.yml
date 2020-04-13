@@ -1,0 +1,1001 @@
+- name: stats
+  type: group
+  fields:
+  - name: final_tick
+    type: long
+  - name: host_inst_rate
+    type: long
+  - name: host_mem_usage
+    type: long
+  - name: host_op_rate
+    type: long
+  - name: host_seconds
+    type: long
+  - name: host_tick_rate
+    type: long
+  - name: sim_freq
+    type: long
+  - name: sim_insts
+    type: long
+  - name: sim_ops
+    type: long
+  - name: sim_seconds
+    type: long
+  - name: sim_ticks
+    type: long
+  - name: system.clk_domain.clock
+    type: long
+  - name: system.cpu.branchPred.BTBCorrect
+    type: long
+  - name: system.cpu.branchPred.BTBHitPct
+    type: long
+  - name: system.cpu.branchPred.BTBHits
+    type: long
+  - name: system.cpu.branchPred.BTBLookups
+    type: long
+  - name: system.cpu.branchPred.RASInCorrect
+    type: long
+  - name: system.cpu.branchPred.condIncorrect
+    type: long
+  - name: system.cpu.branchPred.condPredicted
+    type: long
+  - name: system.cpu.branchPred.indirectHits
+    type: long
+  - name: system.cpu.branchPred.indirectLookups
+    type: long
+  - name: system.cpu.branchPred.indirectMisses
+    type: long
+  - name: system.cpu.branchPred.lookups
+    type: long
+  - name: system.cpu.branchPred.usedRAS
+    type: long
+  - name: system.cpu.branchPredindirectMispredicted
+    type: long
+  - name: system.cpu.cc_regfile_reads
+    type: long
+  - name: system.cpu.cc_regfile_writes
+    type: long
+  - name: system.cpu.commit.amos
+    type: long
+  - name: system.cpu.commit.branchMispredicts
+    type: long
+  - name: system.cpu.commit.branches
+    type: long
+  - name: system.cpu.commit.bw_lim_events
+    type: long
+  - name: system.cpu.commit.commitNonSpecStalls
+    type: long
+  - name: system.cpu.commit.commitSquashedInsts
+    type: long
+  - name: system.cpu.commit.committedInsts
+    type: long
+  - name: system.cpu.commit.committedOps
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::0
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::1
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::2
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::3
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::4
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::5
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::6
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::7
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::8
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::max_value
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::mean
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::min_value
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::overflows
+    type: text
+  - name: system.cpu.commit.committed_per_cycle::samples
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::stdev
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::total
+    type: long
+  - name: system.cpu.commit.committed_per_cycle::underflows
+    type: text
+  - name: system.cpu.commit.fp_insts
+    type: long
+  - name: system.cpu.commit.function_calls
+    type: long
+  - name: system.cpu.commit.int_insts
+    type: long
+  - name: system.cpu.commit.loads
+    type: long
+  - name: system.cpu.commit.membars
+    type: long
+  - name: system.cpu.commit.op_class_0::FloatAdd
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatCmp
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatCvt
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatDiv
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatMemRead
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatMemWrite
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatMisc
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatMult
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatMultAcc
+    type: text
+  - name: system.cpu.commit.op_class_0::FloatSqrt
+    type: text
+  - name: system.cpu.commit.op_class_0::InstPrefetch
+    type: text
+  - name: system.cpu.commit.op_class_0::IntAlu
+    type: text
+  - name: system.cpu.commit.op_class_0::IntDiv
+    type: text
+  - name: system.cpu.commit.op_class_0::IntMult
+    type: text
+  - name: system.cpu.commit.op_class_0::IprAccess
+    type: text
+  - name: system.cpu.commit.op_class_0::MemRead
+    type: text
+  - name: system.cpu.commit.op_class_0::MemWrite
+    type: text
+  - name: system.cpu.commit.op_class_0::No_OpClass
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdAdd
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdAddAcc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdAes
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdAesMix
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdAlu
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdCmp
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdCvt
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdDiv
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatAdd
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatAlu
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatCmp
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatCvt
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatDiv
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatMisc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatMult
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatMultAcc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatReduceAdd
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatReduceCmp
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdFloatSqrt
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdMisc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdMult
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdMultAcc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdPredAlu
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdReduceAdd
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdReduceAlu
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdReduceCmp
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdSha1Hash
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdSha1Hash2
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdSha256Hash
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdSha256Hash2
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdShaSigma2
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdShaSigma3
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdShift
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdShiftAcc
+    type: text
+  - name: system.cpu.commit.op_class_0::SimdSqrt
+    type: text
+  - name: system.cpu.commit.op_class_0::total
+    type: long
+  - name: system.cpu.commit.refs
+    type: long
+  - name: system.cpu.commit.swp_count
+    type: long
+  - name: system.cpu.commit.vec_insts
+    type: long
+  - name: system.cpu.committedInsts
+    type: long
+  - name: system.cpu.committedOps
+    type: long
+  - name: system.cpu.cpi
+    type: long
+  - name: system.cpu.cpi_total
+    type: long
+  - name: system.cpu.decode.BlockedCycles
+    type: long
+  - name: system.cpu.decode.DecodedInsts
+    type: long
+  - name: system.cpu.decode.IdleCycles
+    type: long
+  - name: system.cpu.decode.RunCycles
+    type: long
+  - name: system.cpu.decode.SquashCycles
+    type: long
+  - name: system.cpu.decode.UnblockCycles
+    type: long
+  - name: system.cpu.dtb.rdAccesses
+    type: long
+  - name: system.cpu.dtb.rdMisses
+    type: long
+  - name: system.cpu.dtb.wrAccesses
+    type: long
+  - name: system.cpu.dtb.wrMisses
+    type: long
+  - name: system.cpu.fetch.Branches
+    type: long
+  - name: system.cpu.fetch.CacheLines
+    type: long
+  - name: system.cpu.fetch.Cycles
+    type: long
+  - name: system.cpu.fetch.IcacheSquashes
+    type: long
+  - name: system.cpu.fetch.Insts
+    type: long
+  - name: system.cpu.fetch.MiscStallCycles
+    type: long
+  - name: system.cpu.fetch.PendingQuiesceStallCycles
+    type: long
+  - name: system.cpu.fetch.PendingTrapStallCycles
+    type: long
+  - name: system.cpu.fetch.SquashCycles
+    type: long
+  - name: system.cpu.fetch.branchRate
+    type: long
+  - name: system.cpu.fetch.icacheStallCycles
+    type: long
+  - name: system.cpu.fetch.predictedBranches
+    type: long
+  - name: system.cpu.fetch.rate
+    type: long
+  - name: system.cpu.fetch.rateDist::0
+    type: text
+  - name: system.cpu.fetch.rateDist::1
+    type: text
+  - name: system.cpu.fetch.rateDist::2
+    type: text
+  - name: system.cpu.fetch.rateDist::3
+    type: text
+  - name: system.cpu.fetch.rateDist::4
+    type: text
+  - name: system.cpu.fetch.rateDist::5
+    type: text
+  - name: system.cpu.fetch.rateDist::6
+    type: text
+  - name: system.cpu.fetch.rateDist::7
+    type: text
+  - name: system.cpu.fetch.rateDist::8
+    type: text
+  - name: system.cpu.fetch.rateDist::max_value
+    type: long
+  - name: system.cpu.fetch.rateDist::mean
+    type: long
+  - name: system.cpu.fetch.rateDist::min_value
+    type: long
+  - name: system.cpu.fetch.rateDist::overflows
+    type: text
+  - name: system.cpu.fetch.rateDist::samples
+    type: long
+  - name: system.cpu.fetch.rateDist::stdev
+    type: long
+  - name: system.cpu.fetch.rateDist::total
+    type: long
+  - name: system.cpu.fetch.rateDist::underflows
+    type: text
+  - name: system.cpu.fp_regfile_reads
+    type: long
+  - name: system.cpu.idleCycles
+    type: long
+  - name: system.cpu.iew.branchMispredicts
+    type: long
+  - name: system.cpu.iew.exec_branches
+    type: long
+  - name: system.cpu.iew.exec_nop
+    type: long
+  - name: system.cpu.iew.exec_rate
+    type: long
+  - name: system.cpu.iew.exec_refs
+    type: long
+  - name: system.cpu.iew.exec_stores
+    type: long
+  - name: system.cpu.iew.exec_swp
+    type: long
+  - name: system.cpu.iew.iewBlockCycles
+    type: long
+  - name: system.cpu.iew.iewDispLoadInsts
+    type: long
+  - name: system.cpu.iew.iewDispNonSpecInsts
+    type: long
+  - name: system.cpu.iew.iewDispSquashedInsts
+    type: long
+  - name: system.cpu.iew.iewDispStoreInsts
+    type: long
+  - name: system.cpu.iew.iewDispatchedInsts
+    type: long
+  - name: system.cpu.iew.iewExecLoadInsts
+    type: long
+  - name: system.cpu.iew.iewExecSquashedInsts
+    type: long
+  - name: system.cpu.iew.iewExecutedInsts
+    type: long
+  - name: system.cpu.iew.iewIQFullEvents
+    type: long
+  - name: system.cpu.iew.iewIdleCycles
+    type: long
+  - name: system.cpu.iew.iewLSQFullEvents
+    type: long
+  - name: system.cpu.iew.iewSquashCycles
+    type: long
+  - name: system.cpu.iew.iewUnblockCycles
+    type: long
+  - name: system.cpu.iew.lsq.thread0.blockedLoads
+    type: long
+  - name: system.cpu.iew.lsq.thread0.cacheBlocked
+    type: long
+  - name: system.cpu.iew.lsq.thread0.forwLoads
+    type: long
+  - name: system.cpu.iew.lsq.thread0.ignoredResponses
+    type: long
+  - name: system.cpu.iew.lsq.thread0.invAddrLoads
+    type: long
+  - name: system.cpu.iew.lsq.thread0.invAddrSwpfs
+    type: long
+  - name: system.cpu.iew.lsq.thread0.memOrderViolation
+    type: long
+  - name: system.cpu.iew.lsq.thread0.rescheduledLoads
+    type: long
+  - name: system.cpu.iew.lsq.thread0.squashedLoads
+    type: long
+  - name: system.cpu.iew.lsq.thread0.squashedStores
+    type: long
+  - name: system.cpu.iew.memOrderViolationEvents
+    type: long
+  - name: system.cpu.iew.predictedNotTakenIncorrect
+    type: long
+  - name: system.cpu.iew.predictedTakenIncorrect
+    type: long
+  - name: system.cpu.iew.wb_consumers
+    type: long
+  - name: system.cpu.iew.wb_count
+    type: long
+  - name: system.cpu.iew.wb_fanout
+    type: long
+  - name: system.cpu.iew.wb_producers
+    type: long
+  - name: system.cpu.iew.wb_rate
+    type: long
+  - name: system.cpu.iew.wb_sent
+    type: long
+  - name: system.cpu.int_regfile_reads
+    type: long
+  - name: system.cpu.int_regfile_writes
+    type: long
+  - name: system.cpu.ipc
+    type: long
+  - name: system.cpu.ipc_total
+    type: long
+  - name: system.cpu.iq.FU_type_0::FloatAdd
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatCmp
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatCvt
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatDiv
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatMemRead
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatMemWrite
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatMisc
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatMult
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatMultAcc
+    type: text
+  - name: system.cpu.iq.FU_type_0::FloatSqrt
+    type: text
+  - name: system.cpu.iq.FU_type_0::InstPrefetch
+    type: text
+  - name: system.cpu.iq.FU_type_0::IntAlu
+    type: text
+  - name: system.cpu.iq.FU_type_0::IntDiv
+    type: text
+  - name: system.cpu.iq.FU_type_0::IntMult
+    type: text
+  - name: system.cpu.iq.FU_type_0::IprAccess
+    type: text
+  - name: system.cpu.iq.FU_type_0::MemRead
+    type: text
+  - name: system.cpu.iq.FU_type_0::MemWrite
+    type: text
+  - name: system.cpu.iq.FU_type_0::No_OpClass
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdAdd
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdAddAcc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdAes
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdAesMix
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdAlu
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdCmp
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdCvt
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdDiv
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatAdd
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatAlu
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatCmp
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatCvt
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatDiv
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatMisc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatMult
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatMultAcc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatReduceAdd
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatReduceCmp
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdFloatSqrt
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdMisc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdMult
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdMultAcc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdPredAlu
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdReduceAdd
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdReduceAlu
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdReduceCmp
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdSha1Hash
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdSha1Hash2
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdSha256Hash
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdSha256Hash2
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdShaSigma2
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdShaSigma3
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdShift
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdShiftAcc
+    type: text
+  - name: system.cpu.iq.FU_type_0::SimdSqrt
+    type: text
+  - name: system.cpu.iq.FU_type_0::total
+    type: long
+  - name: system.cpu.iq.fp_alu_accesses
+    type: long
+  - name: system.cpu.iq.fp_inst_queue_reads
+    type: long
+  - name: system.cpu.iq.fp_inst_queue_wakeup_accesses
+    type: long
+  - name: system.cpu.iq.fp_inst_queue_writes
+    type: long
+  - name: system.cpu.iq.fu_busy_cnt
+    type: long
+  - name: system.cpu.iq.fu_busy_rate
+    type: long
+  - name: system.cpu.iq.fu_full::FloatAdd
+    type: text
+  - name: system.cpu.iq.fu_full::FloatCmp
+    type: text
+  - name: system.cpu.iq.fu_full::FloatCvt
+    type: text
+  - name: system.cpu.iq.fu_full::FloatDiv
+    type: text
+  - name: system.cpu.iq.fu_full::FloatMemRead
+    type: text
+  - name: system.cpu.iq.fu_full::FloatMemWrite
+    type: text
+  - name: system.cpu.iq.fu_full::FloatMisc
+    type: text
+  - name: system.cpu.iq.fu_full::FloatMult
+    type: text
+  - name: system.cpu.iq.fu_full::FloatMultAcc
+    type: text
+  - name: system.cpu.iq.fu_full::FloatSqrt
+    type: text
+  - name: system.cpu.iq.fu_full::InstPrefetch
+    type: text
+  - name: system.cpu.iq.fu_full::IntAlu
+    type: text
+  - name: system.cpu.iq.fu_full::IntDiv
+    type: text
+  - name: system.cpu.iq.fu_full::IntMult
+    type: text
+  - name: system.cpu.iq.fu_full::IprAccess
+    type: text
+  - name: system.cpu.iq.fu_full::MemRead
+    type: text
+  - name: system.cpu.iq.fu_full::MemWrite
+    type: text
+  - name: system.cpu.iq.fu_full::No_OpClass
+    type: text
+  - name: system.cpu.iq.fu_full::SimdAdd
+    type: text
+  - name: system.cpu.iq.fu_full::SimdAddAcc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdAes
+    type: text
+  - name: system.cpu.iq.fu_full::SimdAesMix
+    type: text
+  - name: system.cpu.iq.fu_full::SimdAlu
+    type: text
+  - name: system.cpu.iq.fu_full::SimdCmp
+    type: text
+  - name: system.cpu.iq.fu_full::SimdCvt
+    type: text
+  - name: system.cpu.iq.fu_full::SimdDiv
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatAdd
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatAlu
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatCmp
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatCvt
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatDiv
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatMisc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatMult
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatMultAcc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatReduceAdd
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatReduceCmp
+    type: text
+  - name: system.cpu.iq.fu_full::SimdFloatSqrt
+    type: text
+  - name: system.cpu.iq.fu_full::SimdMisc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdMult
+    type: text
+  - name: system.cpu.iq.fu_full::SimdMultAcc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdPredAlu
+    type: text
+  - name: system.cpu.iq.fu_full::SimdReduceAdd
+    type: text
+  - name: system.cpu.iq.fu_full::SimdReduceAlu
+    type: text
+  - name: system.cpu.iq.fu_full::SimdReduceCmp
+    type: text
+  - name: system.cpu.iq.fu_full::SimdSha1Hash
+    type: text
+  - name: system.cpu.iq.fu_full::SimdSha1Hash2
+    type: text
+  - name: system.cpu.iq.fu_full::SimdSha256Hash
+    type: text
+  - name: system.cpu.iq.fu_full::SimdSha256Hash2
+    type: text
+  - name: system.cpu.iq.fu_full::SimdShaSigma2
+    type: text
+  - name: system.cpu.iq.fu_full::SimdShaSigma3
+    type: text
+  - name: system.cpu.iq.fu_full::SimdShift
+    type: text
+  - name: system.cpu.iq.fu_full::SimdShiftAcc
+    type: text
+  - name: system.cpu.iq.fu_full::SimdSqrt
+    type: text
+  - name: system.cpu.iq.int_alu_accesses
+    type: long
+  - name: system.cpu.iq.int_inst_queue_reads
+    type: long
+  - name: system.cpu.iq.int_inst_queue_wakeup_accesses
+    type: long
+  - name: system.cpu.iq.int_inst_queue_writes
+    type: long
+  - name: system.cpu.iq.iqInstsAdded
+    type: long
+  - name: system.cpu.iq.iqInstsIssued
+    type: long
+  - name: system.cpu.iq.iqNonSpecInstsAdded
+    type: long
+  - name: system.cpu.iq.iqSquashedInstsExamined
+    type: long
+  - name: system.cpu.iq.iqSquashedInstsIssued
+    type: long
+  - name: system.cpu.iq.iqSquashedNonSpecRemoved
+    type: long
+  - name: system.cpu.iq.iqSquashedOperandsExamined
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::0
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::1
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::2
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::3
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::4
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::5
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::6
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::7
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::8
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::max_value
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::mean
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::min_value
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::overflows
+    type: text
+  - name: system.cpu.iq.issued_per_cycle::samples
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::stdev
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::total
+    type: long
+  - name: system.cpu.iq.issued_per_cycle::underflows
+    type: text
+  - name: system.cpu.iq.rate
+    type: long
+  - name: system.cpu.iq.vec_alu_accesses
+    type: long
+  - name: system.cpu.iq.vec_inst_queue_reads
+    type: long
+  - name: system.cpu.iq.vec_inst_queue_wakeup_accesses
+    type: long
+  - name: system.cpu.iq.vec_inst_queue_writes
+    type: long
+  - name: system.cpu.itb.rdAccesses
+    type: long
+  - name: system.cpu.itb.rdMisses
+    type: long
+  - name: system.cpu.itb.wrAccesses
+    type: long
+  - name: system.cpu.itb.wrMisses
+    type: long
+  - name: system.cpu.memDep0.conflictingLoads
+    type: long
+  - name: system.cpu.memDep0.conflictingStores
+    type: long
+  - name: system.cpu.memDep0.insertedLoads
+    type: long
+  - name: system.cpu.memDep0.insertedStores
+    type: long
+  - name: system.cpu.misc_regfile_reads
+    type: long
+  - name: system.cpu.misc_regfile_writes
+    type: long
+  - name: system.cpu.numCycles
+    type: long
+  - name: system.cpu.numWorkItemsCompleted
+    type: long
+  - name: system.cpu.numWorkItemsStarted
+    type: long
+  - name: system.cpu.rename.BlockCycles
+    type: long
+  - name: system.cpu.rename.CommittedMaps
+    type: long
+  - name: system.cpu.rename.IQFullEvents
+    type: long
+  - name: system.cpu.rename.IdleCycles
+    type: long
+  - name: system.cpu.rename.ROBFullEvents
+    type: long
+  - name: system.cpu.rename.RenameLookups
+    type: long
+  - name: system.cpu.rename.RenamedInsts
+    type: long
+  - name: system.cpu.rename.RenamedOperands
+    type: long
+  - name: system.cpu.rename.RunCycles
+    type: long
+  - name: system.cpu.rename.SQFullEvents
+    type: long
+  - name: system.cpu.rename.SquashCycles
+    type: long
+  - name: system.cpu.rename.UnblockCycles
+    type: long
+  - name: system.cpu.rename.UndoneMaps
+    type: long
+  - name: system.cpu.rename.fp_rename_lookups
+    type: long
+  - name: system.cpu.rename.int_rename_lookups
+    type: long
+  - name: system.cpu.rename.serializeStallCycles
+    type: long
+  - name: system.cpu.rename.serializingInsts
+    type: long
+  - name: system.cpu.rename.skidInsts
+    type: long
+  - name: system.cpu.rename.tempSerializingInsts
+    type: long
+  - name: system.cpu.rob.rob_reads
+    type: long
+  - name: system.cpu.rob.rob_writes
+    type: long
+  - name: system.cpu.timesIdled
+    type: long
+  - name: system.cpu.workload.numSyscalls
+    type: long
+  - name: system.cpu_voltage_domain.voltage
+    type: long
+  - name: system.mem_ctrls.avgPriority_.cpu.data::samples
+    type: long
+  - name: system.mem_ctrls.avgPriority_.cpu.inst::samples
+    type: long
+  - name: system.mem_ctrls.avgPriority_.writebacks::samples
+    type: long
+  - name: system.mem_ctrls.avgRdQLen
+    type: long
+  - name: system.mem_ctrls.avgWrQLen
+    type: long
+  - name: system.mem_ctrls.bw_inst_read::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.bw_inst_read::total
+    type: long
+  - name: system.mem_ctrls.bw_read::.cpu.data
+    type: long
+  - name: system.mem_ctrls.bw_read::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.bw_read::total
+    type: long
+  - name: system.mem_ctrls.bw_total::.cpu.data
+    type: long
+  - name: system.mem_ctrls.bw_total::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.bw_total::total
+    type: long
+  - name: system.mem_ctrls.bytes_inst_read::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.bytes_inst_read::total
+    type: long
+  - name: system.mem_ctrls.bytes_read::.cpu.data
+    type: long
+  - name: system.mem_ctrls.bytes_read::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.bytes_read::total
+    type: long
+  - name: system.mem_ctrls.mergedWrBursts
+    type: long
+  - name: system.mem_ctrls.neitherReadNorWriteReqs
+    type: long
+  - name: system.mem_ctrls.numReadWriteTurnArounds
+    type: long
+  - name: system.mem_ctrls.numStayReadState
+    type: long
+  - name: system.mem_ctrls.numStayWriteState
+    type: long
+  - name: system.mem_ctrls.numWriteReadTurnArounds
+    type: long
+  - name: system.mem_ctrls.num_reads::.cpu.data
+    type: long
+  - name: system.mem_ctrls.num_reads::.cpu.inst
+    type: long
+  - name: system.mem_ctrls.num_reads::total
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::0
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::1
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::10
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::11
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::12
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::13
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::14
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::15
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::2
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::3
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::4
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::5
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::6
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::7
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::8
+    type: long
+  - name: system.mem_ctrls.perBankRdBursts::9
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::0
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::1
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::10
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::11
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::12
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::13
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::14
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::15
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::2
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::3
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::4
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::5
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::6
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::7
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::8
+    type: long
+  - name: system.mem_ctrls.perBankWrBursts::9
+    type: long
+  - name: system.mem_ctrls.priorityMaxLatency
+    type: long
+  - name: system.mem_ctrls.priorityMinLatency
+    type: long
+  - name: system.mem_ctrls.pwrStateResidencyTicks::UNDEFINED
+    type: long
+  - name: system.mem_ctrls.readBursts
+    type: long
+  - name: system.mem_ctrls.readReqs
+    type: long
+  - name: system.mem_ctrls.servicedByWrQ
+    type: long
+  - name: system.mem_ctrls.writeBursts
+    type: long
+  - name: system.mem_ctrls.writeReqs
+    type: long
+  - name: system.membus.pkt_count::total
+    type: long
+  - name: system.membus.pkt_count_system.cpu.dcache.mem_side::system.mem_ctrls.port
+    type: long
+  - name: system.membus.pkt_count_system.cpu.dcache.mem_side::total
+    type: long
+  - name: system.membus.pkt_count_system.cpu.icache.mem_side::system.mem_ctrls.port
+    type: long
+  - name: system.membus.pkt_count_system.cpu.icache.mem_side::total
+    type: long
+  - name: system.membus.pkt_size::total
+    type: long
+  - name: system.membus.pkt_size_system.cpu.dcache.mem_side::system.mem_ctrls.port
+    type: long
+  - name: system.membus.pkt_size_system.cpu.dcache.mem_side::total
+    type: long
+  - name: system.membus.pkt_size_system.cpu.icache.mem_side::system.mem_ctrls.port
+    type: long
+  - name: system.membus.pkt_size_system.cpu.icache.mem_side::total
+    type: long
+  - name: system.membus.pwrStateResidencyTicks::UNDEFINED
+    type: long
+  - name: system.membus.reqLayer2.occupancy
+    type: long
+  - name: system.membus.reqLayer2.utilization
+    type: long
+  - name: system.membus.respLayer1.occupancy
+    type: long
+  - name: system.membus.respLayer1.utilization
+    type: long
+  - name: system.membus.respLayer2.occupancy
+    type: long
+  - name: system.membus.respLayer2.utilization
+    type: long
+  - name: system.membus.snoopTraffic
+    type: long
+  - name: system.membus.snoop_fanout::0
+    type: text
+  - name: system.membus.snoop_fanout::1
+    type: text
+  - name: system.membus.snoop_fanout::2
+    type: text
+  - name: system.membus.snoop_fanout::3
+    type: text
+  - name: system.membus.snoop_fanout::4
+    type: text
+  - name: system.membus.snoop_fanout::max_value
+    type: long
+  - name: system.membus.snoop_fanout::mean
+    type: long
+  - name: system.membus.snoop_fanout::min_value
+    type: long
+  - name: system.membus.snoop_fanout::overflows
+    type: text
+  - name: system.membus.snoop_fanout::samples
+    type: long
+  - name: system.membus.snoop_fanout::stdev
+    type: long
+  - name: system.membus.snoop_fanout::total
+    type: long
+  - name: system.membus.snoop_fanout::underflows
+    type: text
+  - name: system.membus.snoop_filter.hit_multi_requests
+    type: long
+  - name: system.membus.snoop_filter.hit_multi_snoops
+    type: long
+  - name: system.membus.snoop_filter.hit_single_requests
+    type: long
+  - name: system.membus.snoop_filter.hit_single_snoops
+    type: long
+  - name: system.membus.snoop_filter.tot_requests
+    type: long
+  - name: system.membus.snoop_filter.tot_snoops
+    type: long
+  - name: system.membus.snoops
+    type: long
+  - name: system.membus.trans_dist::ReadCleanReq
+    type: long
+  - name: system.membus.trans_dist::ReadExReq
+    type: long
+  - name: system.membus.trans_dist::ReadExResp
+    type: long
+  - name: system.membus.trans_dist::ReadResp
+    type: long
+  - name: system.membus.trans_dist::ReadSharedReq
+    type: long
+  - name: system.membus.trans_dist::WritebackClean
+    type: long
+  - name: system.voltage_domain.voltage
+    type: long
