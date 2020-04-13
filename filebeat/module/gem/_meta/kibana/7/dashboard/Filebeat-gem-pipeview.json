@@ -5,22 +5,182 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
         },
-        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
-        "panelsJSON": "[]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":31,\"i\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\"},\"panelIndex\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\",\"embeddableConfig\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":false,\"vis\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":true}},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":6,\"i\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\"},\"panelIndex\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":6,\"w\":12,\"h\":4,\"i\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\"},\"panelIndex\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":36,\"y\":6,\"w\":12,\"h\":4,\"i\":\"fd561510-c089-41b2-908a-43e8608827ea\"},\"panelIndex\":\"fd561510-c089-41b2-908a-43e8608827ea\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":10,\"w\":12,\"h\":4,\"i\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\"},\"panelIndex\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"}]",
         "timeRestore": false,
-        "title": "[Filebeat gem] Pipeview",
+        "title": "[Filebeat gem] pipeview",
         "version": 1
       },
-      "id": "6d478cd0-7a41-11ea-950a-89e4f568c946",
+      "id": "7b8187e0-7d9f-11ea-be02-4f780849bb72",
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
-      "references": [],
+      "references": [
+        {
+          "id": "10602570-7d9f-11ea-be02-4f780849bb72",
+          "name": "panel_0",
+          "type": "visualization"
+        },
+        {
+          "id": "528013f0-7da6-11ea-be02-4f780849bb72",
+          "name": "panel_1",
+          "type": "visualization"
+        },
+        {
+          "id": "f20d2ad0-7da0-11ea-be02-4f780849bb72",
+          "name": "panel_2",
+          "type": "visualization"
+        },
+        {
+          "id": "b9b8a370-7da6-11ea-be02-4f780849bb72",
+          "name": "panel_3",
+          "type": "visualization"
+        },
+        {
+          "id": "f59c5d50-7da6-11ea-be02-4f780849bb72",
+          "name": "panel_4",
+          "type": "visualization"
+        }
+      ],
       "type": "dashboard",
-      "updated_at": "2020-04-09T09:06:41.309Z",
-      "version": "WzE5ODY5LDZd"
+      "updated_at": "2020-04-13T17:03:43.148Z",
+      "version": "WzIwNzc2LDdd"
+    },
+    {
+      "attributes": {
+        "description": "pipeview",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "pipeview [Filebeat gem]",
+        "uiStateJSON": "{\"vis\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"}}}",
+        "version": 1,
+        "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"2\",\"params\":{\"extended_bounds\":{\"max\":\"\",\"min\":\"\"},\"field\":\"gem5.pipeview.seq_num\",\"has_extended_bounds\":false,\"interval\":500,\"min_doc_count\":false},\"schema\":\"segment\",\"type\":\"histogram\"},{\"enabled\":true,\"id\":\"1\",\"params\":{\"field\":\"gem5.pipeview.start_tick\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"field\":\"gem5.pipeview.inst.fetch\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"4\",\"params\":{\"field\":\"gem5.pipeview.inst.decode\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"5\",\"params\":{\"field\":\"gem5.pipeview.inst.rename\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"6\",\"params\":{\"field\":\"gem5.pipeview.inst.dispatch\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"7\",\"params\":{\"field\":\"gem5.pipeview.inst.issue\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"8\",\"params\":{\"field\":\"gem5.pipeview.inst.complete\"},\"schema\":\"metric\",\"type\":\"max\"}],\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"dimensions\":{\"x\":{\"accessor\":0,\"aggType\":\"histogram\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"gem5.pipeview.seq_num\",\"params\":{\"interval\":500}},\"y\":[{\"accessor\":1,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.fetch\",\"params\":{}},{\"accessor\":2,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.decode\",\"params\":{}},{\"accessor\":3,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.rename\",\"params\":{}},{\"accessor\":4,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.dispatch\",\"params\":{}},{\"accessor\":5,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.issue\",\"params\":{}},{\"accessor\":6,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.inst.complete\",\"params\":{}},{\"accessor\":7,\"aggType\":\"max\",\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"basePath\":\"/s/gem5\",\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\"}}},\"label\":\"Max gem5.pipeview.start_tick\",\"params\":{}}]},\"grid\":{\"categoryLines\":false},\"labels\":{},\"legendPosition\":\"right\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Max gem5.pipeview.start_tick\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"3\",\"label\":\"Max gem5.pipeview.inst.fetch\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"4\",\"label\":\"Max gem5.pipeview.inst.decode\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"5\",\"label\":\"Max gem5.pipeview.inst.rename\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"6\",\"label\":\"Max gem5.pipeview.inst.dispatch\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"7\",\"label\":\"Max gem5.pipeview.inst.issue\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"8\",\"label\":\"Max gem5.pipeview.inst.complete\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"thresholdLine\":{\"color\":\"#E7664C\",\"show\":false,\"style\":\"full\",\"value\":10,\"width\":1},\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Max gem5.pipeview.start_tick\"},\"type\":\"value\"}]},\"title\":\"pipeview [Filebeat gem]\",\"type\":\"horizontal_bar\"}"
+      },
+      "id": "10602570-7d9f-11ea-be02-4f780849bb72",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-13T16:44:20.643Z",
+      "version": "WzIwNzYxLDdd"
+    },
+    {
+      "attributes": {
+        "description": "pipeview",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "introduction [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"introduction [Filebeat gem]\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"This is pipeview\\n\\nThanks for Python script in, and Konata \"},\"aggs\":[]}"
+      },
+      "id": "528013f0-7da6-11ea-be02-4f780849bb72",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-04-13T16:46:29.039Z",
+      "version": "WzIwNzYzLDdd"
+    },
+    {
+      "attributes": {
+        "description": "pipeview",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"gem5.pipeview.inst.fetch\"},\"meta\":{\"alias\":null,\"disabled\":false,\"key\":\"gem5.pipeview.inst.fetch\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\",\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "numFetchOps [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"numFetchOps [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":false},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":25}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}"
+      },
+      "id": "f20d2ad0-7da0-11ea-be02-4f780849bb72",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        },
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-13T16:57:17.227Z",
+      "version": "WzIwNzcwLDdd"
+    },
+    {
+      "attributes": {
+        "description": "pipeview",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"key\":\"gem5.pipeview.inst.complete\",\"negate\":true,\"params\":{\"query\":\"0\"},\"type\":\"phrase\",\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match_phrase\":{\"gem5.pipeview.inst.complete\":\"0\"}}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "numCommittedOps [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"numCommittedOps [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":false},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":25}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}"
+      },
+      "id": "b9b8a370-7da6-11ea-be02-4f780849bb72",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        },
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-13T16:58:15.861Z",
+      "version": "WzIwNzcxLDdd"
+    },
+    {
+      "attributes": {
+        "description": "pipeview",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "numCycles [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"numCycles [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":false},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":25}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"gem5.pipeview.end_tick\"}}]}"
+      },
+      "id": "f59c5d50-7da6-11ea-be02-4f780849bb72",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "f7ea1d80-7d5c-11ea-be02-4f780849bb72",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-13T16:59:05.225Z",
+      "version": "WzIwNzczLDdd"
     }
   ],
   "version": "7.6.1"

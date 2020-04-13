@@ -31,9 +31,6 @@ processors:
           event.Delete("fileset.name");
           event.Delete("service.type");
 
-          //m5outTime = new Date(m5outTime).toISOString();
-          event.Put("event.timestamp", m5outTime);
-
           var lines = event.Get("message");
           var lines = lines.split(/\n/);
           var inst = {};
@@ -43,8 +40,8 @@ processors:
               // be aware of that the time of the last event may not be "retire" if the instruction is not comlpeted.
               if (fields[0] == "O3PipeView") {
                   if (fields[1] == "fetch") {
-                      inst["start_tick"] = Number(fields[2])/500;
-                      inst["end_tick"] = Number(fields[2])/500;
+                      inst["start_tick"] = Number(fields[2]);
+                      inst["end_tick"] = Number(fields[2]);
       
                       inst["pc_upc"] = fields[3] + fields[4];
                       inst["seq_num"] = Number(fields[5]);
@@ -52,30 +49,30 @@ processors:
                       inst["disasm_assembly"] = fields[7];
                   } else if (fields[1] == "decode") {
                       if (fields[2] != 0) {
-                          inst["fetch"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["fetch"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                       }
                   } else if (fields[1] == "rename") {
                       if (fields[2] != 0) {
-                          inst["decode"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["decode"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                       }
                   } else if (fields[1] == "dispatch") {
                       if (fields[2] != 0) {
-                          inst["rename"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["rename"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                       }
                   } else if (fields[1] == "issue") {
                       // only can issue == dispatch(conclude from o3-pipeview.py)
                       // maybe I can add a field to indicate this.
                       if (fields[2] != 0) {
-                          inst["dispatch"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["dispatch"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                       }
                   } else if (fields[1] == "complete") {
                       if (fields[2] != 0) {
-                          inst["issue"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["issue"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                       }
                   } else if (fields[1] == "retire") {
                       // This will distinguish completed and abandoned intructions.
@@ -84,20 +81,19 @@ processors:
                       } else {
                           inst["abandoned_instuction"] = "false";
       
-                          inst["complete"] = Number(fields[2])/500 - inst["end_tick"];
-                          inst["end_tick"] = Number(fields[2])/500;
+                          inst["complete"] = Number(fields[2]) - inst["end_tick"];
+                          inst["end_tick"] = Number(fields[2]);
                           // do not include store stage
-                          //inst["end_tick"] = Number(fields[2])/500;// retire
+                          //inst["end_tick"] = Number(fields[2]);// retire
       
                           // according to o3-pipeview.py, the width of the last stage will always be 1(*cycle-time), here, I assume that be 500
                           // however, I assume that the tick of store - the tick of retire is the tick spent on store
-                          //inst["store"] = Number(fields[4])/500 - Number(fields[2])/500;
-                          inst["store"] = Number(fields[4])/500;
+                          //inst["store"] = Number(fields[4]) - Number(fields[2]);
+                          inst["store"] = Number(fields[4]);
                       }
                   }
               }
           }
-      
       
           // insert to elasticsearch
           event.Put("gem5.pipeview.pc_upc" , inst["pc_upc"]);
@@ -108,25 +104,28 @@ processors:
           event.Put("gem5.pipeview.start_tick", inst["start_tick"]);
           event.Put("gem5.pipeview.end_tick", inst["end_tick"]);
       
-          event.Put("gem5.pipeview.fetch", inst["fetch"]);
-          event.Put("gem5.pipeview.decode", inst["decode"]);
-          event.Put("gem5.pipeview.rename", inst["rename"]);
-          event.Put("gem5.pipeview.dispatch", inst["dispatch"]);
-          event.Put("gem5.pipeview.issue", inst["issue"]);
-          event.Put("gem5.pipeview.complete", inst["complete"]);
-          event.Put("gem5.pipeview.store", inst["store"]);
+          event.Put("gem5.pipeview.inst.fetch", inst["fetch"]);
+          event.Put("gem5.pipeview.inst.decode", inst["decode"]);
+          event.Put("gem5.pipeview.inst.rename", inst["rename"]);
+          event.Put("gem5.pipeview.inst.dispatch", inst["dispatch"]);
+          event.Put("gem5.pipeview.inst.issue", inst["issue"]);
+          event.Put("gem5.pipeview.inst.complete", inst["complete"]);
+          event.Put("gem5.pipeview.inst.store", inst["store"]);
       
           event.Put("gem5.pipeview.abandoned_instuction", inst["stages"]);
           event.Put("gem5.pipeview.abandoned_instuction", inst["stages"]);
-      
+
+          //m5outTime = new Date(m5outTime).toISOString();
           event.Rename("@timestamp", "event.timestamp");
+          event.Put("event.CreatTime", m5outTime);
+      
           event.Delete("message");
       }
 - timestamp:
-    field: event.timestamp
+    field: event.CreateTime
     layouts:
       - 'Mon Jan _2 15:04:05 MST 2006'
     test:
       - 'Tue Mar 31 19:19:59 CST 2020'
 - drop_fields:
-    fields: event.timestamp
+    fields: ["event.CreatTime"]

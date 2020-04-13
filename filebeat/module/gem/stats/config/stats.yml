@@ -44,11 +44,9 @@ processors:
           //event.Delete("ecs.version");
           //event.Delete("host.name");
 
-          //m5outTime = new Date(m5outTime).toISOString();
-          event.Put("event.timestamp", m5outTime);
-
           var gemStatsMessage = event.Get("message");
           var lines = gemStatsMessage.split(/\n/);
+          var stats = {};
           for(var lineNum=0; lineNum<lines.length; ++lineNum) {
               var line = lines[lineNum];
               if(line.length != 0) {
@@ -57,26 +55,37 @@ processors:
                       line = line.slice(0, pos);
                       line = line.split(/\s+/);
                       var name = line[0];
-                      name = "gem5.stats." + name;
+                      line.pop();
                       if (line.length == 2) {
-                          event.Put(name, Number(line[1]));
+                          stats[name] =  Number(line[1]);
                       } else {
-                          for(var j=1; j<line.length-1; ++j) {
-                              event.AppendTo(name, line[j]);
+                          stats[name] = [];
+                          for(var j=1; j<line.length; ++j) {
+                              stats[name][j-1] = line[j];
                           } 
                       }
                   }
               }
           }
+          //m5outTime = new Date(m5outTime).toISOString();
           event.Rename("@timestamp", "event.timestamp");
+          event.Put("event.CreatTime", m5outTime);
+
+          var gem5Stats = JSON.stringify(stats);
+          event.Put("gem5.stats", gem5Stats);
+
           event.Delete("message");
       }
+- decode_json_fields:
+    fields: ["gem5.stats"]
+    process_array: true
+    max_depth: 15
+    overwrite_keys: true
 - timestamp:
-    field: event.timestamp
+    field: event.CreateTime
     layouts:
       - 'Mon Jan _2 15:04:05 MST 2006'
     test:
       - 'Tue Mar 31 19:19:59 CST 2020'
 - drop_fields:
-    fields: event.timestamp
-
+    fields: ["event.CreatTime"]

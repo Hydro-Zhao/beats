@@ -1,0 +1,23 @@
+{
+  "description": "Pipeline for parsing gem dram logs",
+  "processors": [
+      {
+          "grok": {
+              "field": "message",
+              "pattern": ["", "", "", ""], 
+              "pattern_definitions": {
+                  "": "",
+                  "": "",
+                  "": "",
+                  "": ""
+              }
+          }
+      }
+    ],
+  "on_failure" : [{
+    "set" : {
+      "field" : "error.message",
+      "value" : "{{ _ingest.on_failure_message }}"
+    }
+  }]
+}

@@ -3,25 +3,15 @@ paths:
 {{ range $i, $path := .paths }}
  - {{$path}}
 {{ end }}
-
-harvester_buffer_size: 200000 
+exclude_files: [".gz$"]
 
 close_eof: true
 clean_removed: true
-exclude_files: [".gz$"]
-
-multiline:
-  pattern: '^{'
-  negate: true
-  match: after
-  max_lines: 2000
-  #flush_pattern: '^}'
-  #timeout: 10s
 
 processors:
 - script:
     lang: javascript
-    id: gem_config
+    id: gem_pipeview
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -32,35 +22,17 @@ processors:
       function process(event) {
           event.Delete("event.module");
           event.Delete("input.type");
-          event.Delete("log.file");
-          event.Delete("log.offset");
           event.Delete("log.flags");
           event.Delete("fileset.name");
           event.Delete("service.type");
-          //ecs.version is added after beats event
-          //event.Delete("ecs.version");
-          //event.Delete("host.name");
+
 
           //m5outTime = new Date(m5outTime).toISOString();
           event.Rename("@timestamp", "event.timestamp");
           event.Put("event.CreatTime", m5outTime);
-
-          var gemConfigMessage = event.Get("message");
+      
           event.Delete("message");
-          gemConfigMessage = gemConfigMessage + "}";
-          gemConfigMessage = gemConfigMessage.replace(/\s*/g,"");
-          event.Put("gem5.config", gemConfigMessage);
       }
-- decode_json_fields:
-    fields: ["gem5.config"]
-    process_array: true
-    max_depth: 15
-    overwrite_keys: true
-#- decode_json_fields:
-#    fields: ["gem5.config.system.cpu","gem5.config.system.mem_ctrls","gem5.config.system.redirect_paths"]
-#    process_array: true
-#    max_depth: 15
-#    overwrite_keys: true
 - timestamp:
     field: event.CreateTime
     layouts:
