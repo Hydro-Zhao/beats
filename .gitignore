@@ -12,8 +12,6 @@
 *beat/data
 x-pack/functionbeat/pkg
 
-filebeat/m5out
-
 # Files
 .DS_Store
 /beats.iml
