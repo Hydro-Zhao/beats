@@ -2,13 +2,13 @@
   "objects": [
     {
       "attributes": {
-        "description": "",
+        "description": "O3PipeView",
         "hits": 0,
         "kibanaSavedObjectMeta": {
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":31,\"i\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\"},\"panelIndex\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\",\"embeddableConfig\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":false,\"vis\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":true}},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":6,\"i\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\"},\"panelIndex\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":6,\"w\":12,\"h\":4,\"i\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\"},\"panelIndex\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":36,\"y\":6,\"w\":12,\"h\":4,\"i\":\"fd561510-c089-41b2-908a-43e8608827ea\"},\"panelIndex\":\"fd561510-c089-41b2-908a-43e8608827ea\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":10,\"w\":12,\"h\":4,\"i\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\"},\"panelIndex\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"}]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":7,\"i\":\"e29dd8f5-b11b-48ba-b359-493414e21fc4\"},\"panelIndex\":\"e29dd8f5-b11b-48ba-b359-493414e21fc4\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":24,\"h\":31,\"i\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\"},\"panelIndex\":\"aa28041b-33f2-4c59-85ac-dbc0a8849082\",\"embeddableConfig\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":false,\"vis\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"},\"legendOpen\":true}},\"panelRefName\":\"panel_1\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":7,\"w\":24,\"h\":6,\"i\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\"},\"panelIndex\":\"1e493b97-e3ff-4a32-a390-1b38f30fe305\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":13,\"w\":12,\"h\":4,\"i\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\"},\"panelIndex\":\"c305eebf-88d4-4371-aafd-a8c1214edfd9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":36,\"y\":13,\"w\":12,\"h\":4,\"i\":\"fd561510-c089-41b2-908a-43e8608827ea\"},\"panelIndex\":\"fd561510-c089-41b2-908a-43e8608827ea\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":24,\"y\":17,\"w\":12,\"h\":4,\"i\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\"},\"panelIndex\":\"5e05f60c-e80b-491b-981f-0d36d12d56ff\",\"embeddableConfig\":{},\"panelRefName\":\"panel_5\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] pipeview",
         "version": 1
@@ -19,34 +19,65 @@
       },
       "references": [
         {
-          "id": "10602570-7d9f-11ea-be02-4f780849bb72",
+          "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
           "name": "panel_0",
           "type": "visualization"
         },
         {
-          "id": "528013f0-7da6-11ea-be02-4f780849bb72",
+          "id": "10602570-7d9f-11ea-be02-4f780849bb72",
           "name": "panel_1",
           "type": "visualization"
         },
         {
-          "id": "f20d2ad0-7da0-11ea-be02-4f780849bb72",
+          "id": "528013f0-7da6-11ea-be02-4f780849bb72",
           "name": "panel_2",
           "type": "visualization"
         },
         {
-          "id": "b9b8a370-7da6-11ea-be02-4f780849bb72",
+          "id": "f20d2ad0-7da0-11ea-be02-4f780849bb72",
           "name": "panel_3",
           "type": "visualization"
         },
         {
-          "id": "f59c5d50-7da6-11ea-be02-4f780849bb72",
+          "id": "b9b8a370-7da6-11ea-be02-4f780849bb72",
           "name": "panel_4",
+          "type": "visualization"
+        },
+        {
+          "id": "f59c5d50-7da6-11ea-be02-4f780849bb72",
+          "name": "panel_5",
           "type": "visualization"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0MSwxXQ=="
+      "updated_at": "2020-04-14T09:01:13.343Z",
+      "version": "WzQzOSwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "options list [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"options list [Filebeat gem]\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1586854291298\",\"fieldName\":\"@timestamp\",\"parent\":\"\",\"label\":\"select an experiment\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":20,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}"
+      },
+      "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "control_0_index_pattern",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-14T08:54:44.863Z",
+      "version": "WzQyOSwxXQ=="
     },
     {
       "attributes": {
@@ -71,8 +102,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0MiwxXQ=="
+      "updated_at": "2020-04-14T07:17:53.002Z",
+      "version": "WzQxNywxXQ=="
     },
     {
       "attributes": {
@@ -91,8 +122,8 @@
       },
       "references": [],
       "type": "visualization",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0MywxXQ=="
+      "updated_at": "2020-04-14T07:17:53.002Z",
+      "version": "WzQxOCwxXQ=="
     },
     {
       "attributes": {
@@ -122,8 +153,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0NCwxXQ=="
+      "updated_at": "2020-04-14T07:17:53.002Z",
+      "version": "WzQxOSwxXQ=="
     },
     {
       "attributes": {
@@ -153,8 +184,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0NSwxXQ=="
+      "updated_at": "2020-04-14T07:17:53.002Z",
+      "version": "WzQyMCwxXQ=="
     },
     {
       "attributes": {
@@ -179,8 +210,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T06:56:24.725Z",
-      "version": "WzM0NiwxXQ=="
+      "updated_at": "2020-04-14T07:17:53.002Z",
+      "version": "WzQyMSwxXQ=="
     }
   ],
   "version": "7.6.1"

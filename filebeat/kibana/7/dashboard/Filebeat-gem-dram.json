@@ -5,10 +5,10 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
-        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
-        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1d6b4584-5f91-4330-8287-86704df5f28c\"},\"panelIndex\":\"1d6b4584-5f91-4330-8287-86704df5f28c\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":7,\"i\":\"dda4a3ec-2a6f-4bdd-9a39-a38c1017300e\"},\"panelIndex\":\"dda4a3ec-2a6f-4bdd-9a39-a38c1017300e\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":48,\"h\":15,\"i\":\"1d6b4584-5f91-4330-8287-86704df5f28c\"},\"panelIndex\":\"1d6b4584-5f91-4330-8287-86704df5f28c\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] dram",
         "version": 1
@@ -19,25 +19,56 @@
       },
       "references": [
         {
-          "id": "0a39cbe0-7e1e-11ea-bb3a-a37c1f505e63",
+          "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
           "name": "panel_0",
+          "type": "visualization"
+        },
+        {
+          "id": "0a39cbe0-7e1e-11ea-bb3a-a37c1f505e63",
+          "name": "panel_1",
           "type": "visualization"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-14T07:04:13.766Z",
-      "version": "WzM1MiwxXQ=="
+      "updated_at": "2020-04-14T09:02:18.465Z",
+      "version": "WzQ0MSwxXQ=="
     },
     {
       "attributes": {
-        "description": "DRAM",
+        "description": "",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+          "searchSourceJSON": "{}"
+        },
+        "title": "options list [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"options list [Filebeat gem]\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1586854291298\",\"fieldName\":\"@timestamp\",\"parent\":\"\",\"label\":\"select an experiment\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":20,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}"
+      },
+      "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "control_0_index_pattern",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-14T08:54:44.863Z",
+      "version": "WzQyOSwxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "DRAM access HeatMap",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         },
         "title": "HeatMap [Filebeat gem]",
-        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 4,000\":\"rgb(255,245,240)\",\"4,000 - 8,000\":\"rgb(254,228,216)\",\"8,000 - 12,000\":\"rgb(253,202,181)\",\"12,000 - 16,000\":\"rgb(252,171,142)\",\"16,000 - 20,000\":\"rgb(252,138,106)\",\"20,000 - 24,000\":\"rgb(251,106,74)\",\"24,000 - 28,000\":\"rgb(241,68,50)\",\"28,000 - 32,000\":\"rgb(217,38,35)\",\"32,000 - 36,000\":\"rgb(188,20,26)\",\"36,000 - 40,000\":\"rgb(152,12,19)\"}}}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 40\":\"rgb(255,245,240)\",\"40 - 80\":\"rgb(254,228,216)\",\"80 - 120\":\"rgb(253,202,181)\",\"120 - 160\":\"rgb(252,171,142)\",\"160 - 200\":\"rgb(252,138,106)\",\"200 - 240\":\"rgb(251,106,74)\",\"240 - 280\":\"rgb(241,68,50)\",\"280 - 320\":\"rgb(217,38,35)\",\"320 - 360\":\"rgb(188,20,26)\",\"360 - 400\":\"rgb(152,12,19)\"}}}",
         "version": 1,
-        "visState": "{\"title\":\"HeatMap [Filebeat gem]\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":10,\"colorSchema\":\"Reds\",\"setColorRange\":false,\"colorsRange\":[{\"from\":0,\"to\":100}],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"overwriteColor\":false,\"color\":\"black\"}}],\"dimensions\":{\"x\":null,\"y\":[{\"accessor\":0,\"format\":{\"id\":\"number\"},\"params\":{},\"label\":\"Count\",\"aggType\":\"count\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}"
+        "visState": "{\"title\":\"HeatMap [Filebeat gem]\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":10,\"colorSchema\":\"Reds\",\"setColorRange\":false,\"colorsRange\":[{\"from\":0,\"to\":100}],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"overwriteColor\":false,\"color\":\"black\"}}],\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}},\"params\":{\"interval\":8000},\"label\":\"gem5.dram.address\",\"aggType\":\"histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"label\":\"Count\",\"aggType\":\"count\"}],\"series\":[{\"accessor\":1,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}},\"params\":{},\"label\":\"gem5.dram.tick\",\"aggType\":\"histogram\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"gem5.dram.address\",\"interval\":1000,\"min_doc_count\":true,\"has_extended_bounds\":false,\"extended_bounds\":{\"min\":\"\",\"max\":\"\"}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"group\",\"params\":{\"field\":\"gem5.dram.tick\",\"interval\":300000,\"min_doc_count\":true,\"has_extended_bounds\":false,\"extended_bounds\":{\"min\":\"\",\"max\":\"\"}}}]}"
       },
       "id": "0a39cbe0-7e1e-11ea-bb3a-a37c1f505e63",
       "migrationVersion": {
@@ -51,8 +82,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T07:03:27.390Z",
-      "version": "WzM1MSwxXQ=="
+      "updated_at": "2020-04-14T07:23:40.888Z",
+      "version": "WzQyNSwxXQ=="
     }
   ],
   "version": "7.6.1"

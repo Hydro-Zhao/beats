@@ -8,19 +8,51 @@
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":6,\"i\":\"c17acef5-25a1-46a6-b03b-58f24b729219\"},\"panelIndex\":\"c17acef5-25a1-46a6-b03b-58f24b729219\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"}]",
         "timeRestore": false,
-        "title": "[Filebeat gem] Stats",
+        "title": "[Filebeat gem] stats",
         "version": 1
       },
       "id": "52aab000-759b-11ea-950a-89e4f568c946",
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
-      "references": [],
+      "references": [
+        {
+          "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+          "name": "panel_0",
+          "type": "visualization"
+        }
+      ],
       "type": "dashboard",
-      "updated_at": "2020-04-14T06:56:25.744Z",
-      "version": "WzM0NywxXQ=="
+      "updated_at": "2020-04-14T09:00:14.085Z",
+      "version": "WzQzNywxXQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "options list [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"options list [Filebeat gem]\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1586854291298\",\"fieldName\":\"@timestamp\",\"parent\":\"\",\"label\":\"select an experiment\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":20,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}"
+      },
+      "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "control_0_index_pattern",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-14T08:54:44.863Z",
+      "version": "WzQyOSwxXQ=="
     }
   ],
   "version": "7.6.1"
