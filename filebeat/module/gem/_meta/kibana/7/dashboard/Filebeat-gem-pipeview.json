@@ -45,14 +45,14 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-14T03:26:00.563Z",
-      "version": "WzIwODY4LDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0MSwxXQ=="
     },
     {
       "attributes": {
         "description": "pipeview",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+          "searchSourceJSON": "{\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\",\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "title": "pipeview [Filebeat gem]",
         "uiStateJSON": "{\"vis\":{\"colors\":{\"Max gem5.pipeview.start_tick\":\"#E0F9D7\"}}}",
@@ -65,14 +65,14 @@
       },
       "references": [
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
           "type": "index-pattern"
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T03:29:11.081Z",
-      "version": "WzIwODc2LDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0MiwxXQ=="
     },
     {
       "attributes": {
@@ -91,8 +91,8 @@
       },
       "references": [],
       "type": "visualization",
-      "updated_at": "2020-04-14T03:26:00.563Z",
-      "version": "WzIwODcwLDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0MywxXQ=="
     },
     {
       "attributes": {
@@ -111,19 +111,19 @@
       },
       "references": [
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
           "type": "index-pattern"
         },
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
           "type": "index-pattern"
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T03:26:00.563Z",
-      "version": "WzIwODcxLDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0NCwxXQ=="
     },
     {
       "attributes": {
@@ -142,19 +142,19 @@
       },
       "references": [
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
           "type": "index-pattern"
         },
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
           "type": "index-pattern"
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T03:26:00.563Z",
-      "version": "WzIwODcyLDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0NSwxXQ=="
     },
     {
       "attributes": {
@@ -173,14 +173,14 @@
       },
       "references": [
         {
-          "id": "4d0dcef0-7db3-11ea-be02-4f780849bb72",
+          "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
           "type": "index-pattern"
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T03:26:00.563Z",
-      "version": "WzIwODczLDdd"
+      "updated_at": "2020-04-14T06:56:24.725Z",
+      "version": "WzM0NiwxXQ=="
     }
   ],
   "version": "7.6.1"

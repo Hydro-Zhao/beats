@@ -26,16 +26,21 @@ processors:
           event.Delete("fileset.name");
           event.Delete("service.type");
 
+          var gemDramMessage = event.Get("message");
+          var hexIndex = gemDramMessage.search(/0[xX][0-9a-fA-F]+\s*$/);
+          if (hexIndex != -1) {
+              var strHex = gemDramMessage.slice(hexIndex);
+              var numInt = parseInt(strHex, 16);
+          }
+
+          event.Put("gem5.dram.address", numInt);
 
           //m5outTime = new Date(m5outTime).toISOString();
-          event.Rename("@timestamp", "event.timestamp");
-          event.Put("event.CreatTime", m5outTime);
+          event.Put("gem5.timestamp", m5outTime);
       }
-- timestamp:
-    field: event.CreateTime
-    layouts:
-      - 'Mon Jan _2 15:04:05 MST 2006'
-    test:
-      - 'Tue Mar 31 19:19:59 CST 2020'
-- drop_fields:
-    fields: ["event.CreatTime"]
+#- timestamp:
+#    field: event.CreateTime
+#    layouts:
+#      - 'Mon Jan _2 15:04:05 MST 2006'
+#    test:
+#      - 'Tue Mar 31 19:19:59 CST 2020'

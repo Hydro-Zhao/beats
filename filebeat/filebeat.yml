@@ -114,7 +114,8 @@ setup.ilm.enabled: false
 setup.dashboards:
   enabled: true 
   beat: filebeat
-  index: "gem5-filebeat-${M5OUT_MODIFICATION_TIME}"
+  index: "gem5-filebeat-*"
+  #index: "gem5-filebeat-${M5OUT_MODIFICATION_TIME}"
   retry:
     enabled: true 
     interval: 1s

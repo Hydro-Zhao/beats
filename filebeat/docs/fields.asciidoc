@@ -11963,7 +11963,7 @@ Please add description
 --
 Please add description
 
-type: long
+type: integer
 
 example: Please add example
 
@@ -11974,7 +11974,7 @@ example: Please add example
 --
 Please add description
 
-type: long
+type: integer
 
 example: Please add example
 
@@ -11985,7 +11985,7 @@ example: Please add example
 --
 Please add description
 
-type: long
+type: integer
 
 example: Please add example
 

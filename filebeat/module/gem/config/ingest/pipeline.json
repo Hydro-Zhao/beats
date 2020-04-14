@@ -2,6 +2,40 @@
   "description": "Pipeline for parsing gem config logs",
   "processors" : [
       {
+          "date": {
+              "if": "ctx.event.timezone == null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "date": {
+              "if": "ctx.event.timezone != null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "timezone": "{{ event.timezone }}",
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "remove": {
+              "field": "gem5.timestamp"
+          }
+      },
+      {
           "json": {
               "field":"gem5.config.system.cpu"
           }

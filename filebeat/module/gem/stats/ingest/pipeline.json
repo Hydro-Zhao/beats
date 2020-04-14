@@ -2,39 +2,37 @@
   "description": "Pipeline for parsing gem stats logs",
   "processors" : [
       {
-          "convert": {
-              "field": "gem5.stats.system.cpu.numCycles",
-              "type": "long"
+          "date": {
+              "if": "ctx.event.timezone == null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
           }
       },
       {
-          "convert": {
-              "field": "gem5.stats.system.cpu.iew.iewExecutedInsts",
-              "type": "long"
+          "date": {
+              "if": "ctx.event.timezone != null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "timezone": "{{ event.timezone }}",
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
           }
       },
       {
-          "convert": {
-              "field": "gem5.stats.system.l2.overall_access::total",
-              "type": "long"
-          }
-      },
-      {
-          "convert": {
-              "field": "gem5.stats.system.cpu.icache.overall_access::total",
-              "type": "long"
-          }
-      },
-      {
-          "convert": {
-              "field": "gem5.stats.system.mem_ctrls.num_writes::total",
-              "type": "long"
-          }
-      },
-      {
-          "convert": {
-              "field": "gem5.stats.system.mem_ctrls.num_reads::total",
-              "type": "long"
+          "remove": {
+              "field": "gem5.timestamp"
           }
       }
   ],

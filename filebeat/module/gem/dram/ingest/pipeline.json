@@ -6,8 +6,8 @@
               "field": "message",
               "patterns": ["^%{SPACE}%{NUMBER}: system.mem_ctrls: Memory capacity %{NUMBER:gem5.dram.memory_capacity_bytes:integer}", 
                   "^%{SPACE}%{NUMBER}: system.mem_ctrls: Row buffer size %{NUMBER:gem5.dram.row_buffer_size_bytes:integer} bytes with %{NUMBER:gem5.dram.columns_per_row_buffer:integer}",
-                  "^%{SPACE}%{NUMBER:gem5.dram.tick:long}: system.mem_ctrls: %{TYPE}: %{READ_REQ:gem5.dram.access_type:keyword} %{HEX_ADRESS:gem5.dram.address:keyword}",
-                  "^%{SPACE}%{NUMBER:gem5.dram.tick:long}: system.mem_ctrls: %{TYPE}: %{WRITE_REQ:gem5.dram.access_type:keyword} %{HEX_ADRESS:gem5.dram.address:keyword}"], 
+                  "^%{SPACE}%{NUMBER:gem5.dram.tick:long}: system.mem_ctrls: %{TYPE}: %{READ_REQ:gem5.dram.access_type:keyword} %{HEX_ADRESS}",
+                  "^%{SPACE}%{NUMBER:gem5.dram.tick:long}: system.mem_ctrls: %{TYPE}: %{WRITE_REQ:gem5.dram.access_type:keyword} %{HEX_ADRESS}"], 
               "pattern_definitions": {
                   "READ_REQ": "ReadReq",
                   "WRITE_REQ": "WriteReq",
@@ -19,6 +19,40 @@
       {
           "remove": {
               "field": "message"
+          }
+      },
+      {
+          "date": {
+              "if": "ctx.event.timezone == null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "date": {
+              "if": "ctx.event.timezone != null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "timezone": "{{ event.timezone }}",
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "remove": {
+              "field": "gem5.timestamp"
           }
       }
     ],

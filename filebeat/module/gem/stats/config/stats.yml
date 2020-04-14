@@ -68,8 +68,7 @@ processors:
               }
           }
           //m5outTime = new Date(m5outTime).toISOString();
-          event.Rename("@timestamp", "event.timestamp");
-          event.Put("event.CreatTime", m5outTime);
+          event.Put("gem5.timestamp", m5outTime);
 
           var gem5Stats = JSON.stringify(stats);
           event.Put("gem5.stats", gem5Stats);
@@ -81,11 +80,9 @@ processors:
     process_array: true
     max_depth: 15
     overwrite_keys: true
-- timestamp:
-    field: event.CreateTime
-    layouts:
-      - 'Mon Jan _2 15:04:05 MST 2006'
-    test:
-      - 'Tue Mar 31 19:19:59 CST 2020'
-- drop_fields:
-    fields: ["event.CreatTime"]
+#- timestamp:
+#    field: event.CreateTime
+#    layouts:
+#      - 'Mon Jan _2 15:04:05 MST 2006'
+#    test:
+#      - 'Tue Mar 31 19:19:59 CST 2020'

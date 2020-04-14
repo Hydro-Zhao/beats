@@ -30,12 +30,6 @@ create-fields:
 
 
 # this is my own,,,,,,,,
-.PHONY: gem5-kibana
-gem5-kibana:
-	rm -rf kibana
-	mkdir -p kibana/7/dashboard
-	cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
-
 .PHONY: gem5-stats
 gem5-stats:
 	make create-fields MODULE=gem FILESET=stats
@@ -48,8 +42,3 @@ gem5-pipeview:
 .PHONY: gem5-dram
 gem5-dram:
 	make create-fields MODULE=gem FILESET=dram
-
-#TODO remove other modules under module folder, other config files under modules.d, and other dashboards
-.PHONY: gem5-small
-gem5-small:
-	make kibana-gem
