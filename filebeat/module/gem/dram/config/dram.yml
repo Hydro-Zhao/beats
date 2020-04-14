@@ -30,8 +30,6 @@ processors:
           //m5outTime = new Date(m5outTime).toISOString();
           event.Rename("@timestamp", "event.timestamp");
           event.Put("event.CreatTime", m5outTime);
-      
-          event.Delete("message");
       }
 - timestamp:
     field: event.CreateTime

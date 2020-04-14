@@ -11952,6 +11952,78 @@ gem Module
 
 
 
+[float]
+=== dram
+
+Please add description
+
+
+*`gem5.dram.memory_capacity_bytes`*::
++
+--
+Please add description
+
+type: long
+
+example: Please add example
+
+--
+
+*`gem5.dram.row_buffer_size_bytes`*::
++
+--
+Please add description
+
+type: long
+
+example: Please add example
+
+--
+
+*`gem5.dram.columns_per_row_buffer`*::
++
+--
+Please add description
+
+type: long
+
+example: Please add example
+
+--
+
+*`gem5.dram.tick`*::
++
+--
+Please add description
+
+type: long
+
+example: Please add example
+
+--
+
+*`gem5.dram.access_type`*::
++
+--
+Please add description
+
+type: keyword
+
+example: Please add example
+
+--
+
+*`gem5.dram.address`*::
++
+--
+Please add description
+
+type: long
+
+example: Please add example
+
+--
+
 
 *`gem5.pipeview.complete`*::
 +

@@ -43,8 +43,11 @@ gem5-stats:
 gem5-config:
 	make create-fields MODULE=gem FILESET=config
 .PHONY: gem5-pipeview
-pipeview:
+gem5-pipeview:
 	make create-fields MODULE=gem FILESET=pipeview
+.PHONY: gem5-dram
+gem5-dram:
+	make create-fields MODULE=gem FILESET=dram
 
 #TODO remove other modules under module folder, other config files under modules.d, and other dashboards
 .PHONY: gem5-small

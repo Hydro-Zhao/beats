@@ -1,0 +1,29 @@
+- name: dram
+  description: Please add description
+  example: Please add example
+  type: group
+  fields:
+  - name: memory_capacity_bytes
+    description: Please add description
+    example: Please add example
+    type: long
+  - name: row_buffer_size_bytes
+    description: Please add description
+    example: Please add example
+    type: long
+  - name: columns_per_row_buffer
+    description: Please add description
+    example: Please add example
+    type: long
+  - name: tick
+    description: Please add description
+    example: Please add example
+    type: long
+  - name: access_type
+    description: Please add description
+    example: Please add example
+    type: keyword
+  - name: address
+    description: Please add description
+    example: Please add example
+    type: long

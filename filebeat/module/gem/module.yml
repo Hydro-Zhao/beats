@@ -3,5 +3,3 @@ dashboards:
   file: Filebeat-gem-stats.json
 - id: 7b8187e0-7d9f-11ea-be02-4f780849bb72 
   file: Filebeat-gem-pipeview.json
-- id: Filebeat-gem-dram-Dashboard
-  file: Filebeat-gem-dram.json
