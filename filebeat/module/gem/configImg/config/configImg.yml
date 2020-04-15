@@ -1,0 +1,31 @@
+type: log
+paths:
+{{ range $i, $path := .paths }}
+ - {{$path}}
+{{ end }}
+exclude_files: [".gz$"]
+
+harvester_buffer_size: 200000
+
+multiline.pattern: '^<svg '
+multiline.negate: true
+multiline.match: after
+multiline.flush_pattern: '^</svg>'
+
+close_eof: true
+clean_removed: true
+
+processors:
+- script:
+    lang: javascript
+    id: gem_configImg
+    source: >
+      function process(event) {
+          var svgString = event.Get("message");
+          var svgBase64 = btoa(svgString);
+          event.Put("gem5.configImg", svgBase64);
+      }
+#- decode_base64_field:
+#    field:
+#      from: "message"
+#      to: "gem5.decode_base64_field"

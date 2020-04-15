@@ -11,7 +11,7 @@ clean_removed: true
 processors:
 - script:
     lang: javascript
-    id: gem_pipeview
+    id: gem_dram
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >

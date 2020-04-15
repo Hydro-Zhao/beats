@@ -1,0 +1,11 @@
+module_version: 1.0
+
+var:
+  - name: paths
+    default:
+      - ${GEM5_PATH:?the GEM5_PATH is not set}/m5out/config.dot.svg
+    os.darwin: []
+    os.windows: []
+
+#ingest_pipeline: ingest/pipeline.json
+input: config/configImg.yml

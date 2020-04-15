@@ -5,3 +5,5 @@ dashboards:
   file: Filebeat-gem-pipeview.json
 - id: 25de3660-7e1e-11ea-bb3a-a37c1f505e63
   file: Filebeat-gem-dram.json
+- id: Filebeat-gem-configImg-Dashboard
+  file: Filebeat-gem-configImg.json

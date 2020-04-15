@@ -42,3 +42,6 @@ gem5-pipeview:
 .PHONY: gem5-dram
 gem5-dram:
 	make create-fields MODULE=gem FILESET=dram
+.PHONY: gem5-configImg
+gem5-configImg:
+	make create-fields MODULE=gem FILESET=configImg
