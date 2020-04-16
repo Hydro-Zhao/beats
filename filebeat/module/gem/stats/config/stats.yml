@@ -5,7 +5,7 @@ paths:
 {{ end }}
 exclude_files: [".gz$"]
 
-harvester_buffer_size: 70000
+harvester_buffer_size: 200000
 
 close_eof: true
 #clean_inactive: 3s
@@ -21,6 +21,7 @@ multiline.flush_pattern: '^-+[\s]*End Simulation Statistics[\s]*-+'
 #index
 
 processors:
+- add_locale: ~
 - script:
     lang: javascript
     id: gem_stats

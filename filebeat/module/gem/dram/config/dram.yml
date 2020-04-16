@@ -9,6 +9,7 @@ close_eof: true
 clean_removed: true
 
 processors:
+- add_locale: ~
 - script:
     lang: javascript
     id: gem_dram

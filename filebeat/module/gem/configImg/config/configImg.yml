@@ -16,15 +16,40 @@ close_eof: true
 clean_removed: true
 
 processors:
+- add_locale: ~
 - script:
     lang: javascript
     id: gem_configImg
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
       function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
           var svgString = event.Get("message");
           var svgBase64 = btoa(svgString);
           event.Put("gem5.configImg", svgBase64);
+
+          event.Delete("message");
       }
+- decode_json_fields:
+    fields: ["gem5.stats"]
+    process_array: true
+    max_depth: 15
+    overwrite_keys: true
 #- decode_base64_field:
 #    field:
 #      from: "message"

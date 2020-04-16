@@ -19,6 +19,7 @@ multiline:
   #timeout: 10s
 
 processors:
+- add_locale: ~
 - script:
     lang: javascript
     id: gem_config

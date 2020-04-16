@@ -1,0 +1,71 @@
+type: log
+paths:
+{{ range $i, $path := .paths }}
+ - {{$path}}
+{{ end }}
+exclude_files: [".gz$"]
+
+harvester_buffer_size: 200000
+
+close_eof: true
+#clean_inactive: 3s
+clean_removed: true
+
+multiline.pattern: '^Periodic log printout @ tick'
+multiline.negate: true
+multiline.match: after
+multiline.flush_pattern: '^End of log @ tick'
+
+processors:
+- add_locale: ~
+- script:
+    lang: javascript
+    id: gem_SimpleSSDLog
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
+    source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
+      function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
+          var message = event.Get("message");
+          var lines = message.split(/\n/);
+
+          var stats = {};
+
+          var startLine = lines[0];
+          var indexTickStart = startLine.indexOf("tick") + 5;
+          var startTick = Number(startLine.slice(indexTickStart));
+          stats["SimpleSSD.Log.start_tick"] = startTick;
+
+          var endLine = lines[lines.length-1];
+          indexTickStart = endLine.indexOf("tick") + 5;
+          endTick = Number(startLine.slice(indexTickStart));
+          stats["SimpleSSD.Log.end_tick"] = endTick;
+
+          for(var lineNum=1; lineNum<lines.length-1; ++lineNum) {
+              var line = lines[lineNum];
+              if(line.length != 0) {
+                  if(line[0]<"z" && line[0]>"a") {
+                      line = line.split(/\s+/);
+                      event.Put("SimpleSSD.Log"+line[0], Number(line[1]));
+                  }
+              }
+          }
+          //m5outTime = new Date(m5outTime).toISOString();
+          event.Put("SimpleSSD.timestamp", m5outTime);
+
+          event.Delete("message");
+      }

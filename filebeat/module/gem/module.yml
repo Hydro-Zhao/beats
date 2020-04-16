@@ -7,3 +7,13 @@ dashboards:
   file: Filebeat-gem-dram.json
 - id: Filebeat-gem-configImg-Dashboard
   file: Filebeat-gem-configImg.json
+- id: Filebeat-gem-SimpleSSD-Dashboard
+  file: Filebeat-gem-SimpleSSD.json
+- id: Filebeat-gem-simplessd-Dashboard
+  file: Filebeat-gem-simplessd.json
+- id: Filebeat-gem-SimpleSSDDebugLog-Dashboard
+  file: Filebeat-gem-SimpleSSDDebugLog.json
+- id: Filebeat-gem-SimpleSSDLog-Dashboard
+  file: Filebeat-gem-SimpleSSDLog.json
+- id: Filebeat-gem-SimpleSSDlog-Dashboard
+  file: Filebeat-gem-SimpleSSDlog.json
