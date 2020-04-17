@@ -39,18 +39,25 @@ processors:
           //event.Delete("ecs.version");
           //event.Delete("host.name");
 
+          event.Put("gem5.timestamp", m5outTime);
+
           var svgString = event.Get("message");
-          var svgBase64 = btoa(svgString);
-          event.Put("gem5.configImg", svgBase64);
+          if (svgString.slice(0,4) == "<svg") {
+              //var svgBase64 = btoa(svgString);
+              //event.Put("gem5.configImg", svgBase64);
+              event.Put("gem5.configImg", svgString);
+          }
 
           event.Delete("message");
       }
-- decode_json_fields:
-    fields: ["gem5.stats"]
-    process_array: true
-    max_depth: 15
-    overwrite_keys: true
 #- decode_base64_field:
 #    field:
 #      from: "message"
 #      to: "gem5.decode_base64_field"
+
+# I do not know why the other lines out of svg tag are also involved
+- drop_event:
+    when:
+      not:
+        has_fields: ["gem5.configImg"]
+

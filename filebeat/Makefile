@@ -45,3 +45,9 @@ gem5-dram:
 .PHONY: gem5-configImg
 gem5-configImg:
 	make create-fields MODULE=gem FILESET=configImg
+.PHONY: gem5-SimpleSSDDebugLog
+gem5-SimpleSSDDebugLog:
+	make create-fields MODULE=gem FILESET=SimpleSSDDebugLog
+.PHONY: gem5-SimpleSSDLog
+gem5-SimpleSSDLog:
+	make create-fields MODULE=gem FILESET=SimpleSSDLog

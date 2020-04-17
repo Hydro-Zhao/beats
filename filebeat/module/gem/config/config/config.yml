@@ -3,12 +3,12 @@ paths:
 {{ range $i, $path := .paths }}
  - {{$path}}
 {{ end }}
+exclude_files: [".gz$"]
 
 harvester_buffer_size: 200000 
 
 close_eof: true
 clean_removed: true
-exclude_files: [".gz$"]
 
 multiline:
   pattern: '^{'

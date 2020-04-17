@@ -8,21 +8,20 @@ exclude_files: [".gz$"]
 harvester_buffer_size: 200000
 
 close_eof: true
-#clean_inactive: 3s
 clean_removed: true
 
-tail_files = true
+# do not know why this will cause some unkonwn problem
+# tail_files: true
 
-multiline.pattern: '^[0-9]+: CPU:'
+multiline.pattern: '^[0-9]+: CPU: Begin CPU power calculation'
 multiline.negate: true
 multiline.match: after
-multiline.flush_pattern: '^[0-9]+: CPU:'
 
 processors:
 - add_locale: ~
 - script:
     lang: javascript
-    id: gem_SimpleSSDLog
+    id: gem_SimpleSSDDebugLog
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -31,4 +30,41 @@ processors:
           m5outTime = scriptParams.m5outTime;
       }
       function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
+          event.Put("SimpleSSSD.DebugLog.timestamp", m5outTime);
+
+          var message = event.Get("message");
+          var firstLineIndex = message.indexOf("\n");
+          var firstLine = message.slice(0,firstLineIndex);
+          if (firstLine.indexOf("Begin CPU power calculation") != -1) {
+              var lines = message.slice("\n");
+              var name = "error";
+              for (var i=0; i<lines.length; ++i) {
+                  var line = lines.slice(/:\s*/);
+                  if (line[3] = "") {
+                      name = line[2];
+                  } else {
+                      var secondaryName = line[2].replace(/ /g,"_");
+                      var value = line[3].split(" ");
+                      event.Put("SimpleSSD.DebugLog."+name+"."+secondaryName+"."+"value", Number(value[0]));
+                      event.Put("SimpleSSD.DebugLog."+name+"."+secondaryName+"."+"unit", value[1]);
+                  }
+              }
+          }
+          
+          event.Delete("message");
       }
+- drop_event:
+    when:
+      not:
+        has_fields: ["SimpleSSD.DebugLog"]

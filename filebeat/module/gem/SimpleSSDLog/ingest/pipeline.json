@@ -4,7 +4,7 @@
       {
           "date": {
               "if": "ctx.event.timezone == null",
-              "field": "SimpleSSDLog.timestamp",
+              "field": "SimpleSSD.Log.timestamp",
               "target_field": "@timestamp",
               "formats": [
                   "MMM  d HH:mm:ss",
@@ -18,7 +18,7 @@
       {
           "date": {
               "if": "ctx.event.timezone != null",
-              "field": "SimpleSSDLog.timestamp",
+              "field": "SimpleSSD.Log.timestamp",
               "target_field": "@timestamp",
               "formats": [
                   "MMM  d HH:mm:ss",
@@ -32,7 +32,7 @@
       },
       {
           "remove": {
-              "field": "SimpleSSDLog.timestamp"
+              "field": "SimpleSSD.Log.timestamp"
           }
       }
     ],

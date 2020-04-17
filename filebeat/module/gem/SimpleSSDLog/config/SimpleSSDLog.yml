@@ -40,32 +40,36 @@ processors:
           //event.Delete("ecs.version");
           //event.Delete("host.name");
 
+          // If this script has a bug, the error message of ingest node will ...
+          event.Put("SimpleSSD.Log.timestamp", m5outTime);
+
           var message = event.Get("message");
           var lines = message.split(/\n/);
 
-          var stats = {};
-
           var startLine = lines[0];
-          var indexTickStart = startLine.indexOf("tick") + 5;
-          var startTick = Number(startLine.slice(indexTickStart));
-          stats["SimpleSSD.Log.start_tick"] = startTick;
+          var indexStartTick = startLine.indexOf("tick") + 5;
+          var startTick = startLine.slice(indexStartTick);
+          //event.Put("SimpleSSD.Log.start_tick", Number(startTick));
+          //event.Put("SimpleSSD.Log.start_tick", Math.floor(Number(startTick)/1000000));
+          event.Put("SimpleSSD.Log.start_tick", startTick);
+
 
           var endLine = lines[lines.length-1];
-          indexTickStart = endLine.indexOf("tick") + 5;
-          endTick = Number(startLine.slice(indexTickStart));
-          stats["SimpleSSD.Log.end_tick"] = endTick;
+          var indexEndTick = endLine.indexOf("tick") + 5;
+          var endTick = endLine.slice(indexEndTick);
+          //event.Put("SimpleSSD.Log.end_tick", Number(endTick));
+          //event.Put("SimpleSSD.Log.end_tick", Math.floor(Number(endTick)/1000000));
+          event.Put("SimpleSSD.Log.end_tick", endTick);
 
           for(var lineNum=1; lineNum<lines.length-1; ++lineNum) {
               var line = lines[lineNum];
               if(line.length != 0) {
                   if(line[0]<"z" && line[0]>"a") {
                       line = line.split(/\s+/);
-                      event.Put("SimpleSSD.Log"+line[0], Number(line[1]));
+                      event.Put("SimpleSSD.Log."+line[0], Number(line[1]));
                   }
               }
           }
-          //m5outTime = new Date(m5outTime).toISOString();
-          event.Put("SimpleSSD.timestamp", m5outTime);
 
           event.Delete("message");
       }
