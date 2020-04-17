@@ -10,7 +10,8 @@ harvester_buffer_size: 200000
 close_eof: true
 clean_removed: true
 
-# do not know why this will cause some unkonwn problem
+# TODO do not know why this will cause some unkonwn problem,
+# and how to drop a event
 # tail_files: true
 
 multiline.pattern: '^[0-9]+: CPU: Begin CPU power calculation'
@@ -47,21 +48,21 @@ processors:
           var firstLineIndex = message.indexOf("\n");
           var firstLine = message.slice(0,firstLineIndex);
           if (firstLine.indexOf("Begin CPU power calculation") != -1) {
-              var lines = message.slice("\n");
+              var lines = message.split("\n");
               var name = "error";
-              for (var i=0; i<lines.length; ++i) {
-                  var line = lines.slice(/:\s*/);
-                  if (line[3] = "") {
-                      name = line[2];
-                  } else {
-                      var secondaryName = line[2].replace(/ /g,"_");
+              for (var i=1; i<lines.length; ++i) {
+                  var line = lines[i].split(/:\s*/);
+                  if (line[3] && line[3] != "") {
+                      var secondaryName = line[2].replace(/ /g, "_");
                       var value = line[3].split(" ");
                       event.Put("SimpleSSD.DebugLog."+name+"."+secondaryName+"."+"value", Number(value[0]));
                       event.Put("SimpleSSD.DebugLog."+name+"."+secondaryName+"."+"unit", value[1]);
+                  } else {
+                      name = line[2];
                   }
               }
           }
-          
+
           event.Delete("message");
       }
 - drop_event:
