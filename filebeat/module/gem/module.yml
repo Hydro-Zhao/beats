@@ -17,3 +17,5 @@ dashboards:
   file: Filebeat-gem-SimpleSSDLog.json
 - id: Filebeat-gem-SimpleSSDlog-Dashboard
   file: Filebeat-gem-SimpleSSDlog.json
+- id: Filebeat-gem-GarnetSyntheticTraffic-Dashboard
+  file: Filebeat-gem-GarnetSyntheticTraffic.json

@@ -10,11 +10,15 @@ harvester_buffer_size: 200000
 close_eof: true
 clean_removed: true
 
+include_lines: '^\s*[0-9]+: system.cpu[0-9]+: Generated packet with destination '
+# ignore the "created" lines and "complete injection lines"
+#include_lines: ''
+
 processors:
 - add_locale: ~
 - script:
     lang: javascript
-    id: gem_configImg
+    id: gem_GarnetSyntheticTraffic
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -30,21 +34,14 @@ processors:
           event.Delete("log.flags");
           event.Delete("fileset.name");
           event.Delete("service.type");
-          //ecs.version is added after beats event
-          //event.Delete("ecs.version");
-          //event.Delete("host.name");
-
           event.Put("gem5.timestamp", m5outTime);
 
-          var pngString = event.Get("message");
+          var message = event.Get("message");
+          var nums = message.match(/\d+/g);
+          event.Put("gem5.GarnetSyntheticTraffic.tick", Number(nums[0]));
+          event.Put("gem5.GarnetSyntheticTraffic.cpu_id", Number(nums[1]));
+          event.Put("gem5.GarnetSyntheticTraffic.destination_cpu_id", Number(nums[2]));
+          //event.Put("gem5.GarnetSyntheticTraffic.address", Number(nums[2]));
 
           event.Delete("message");
       }
-- decode_base64_field:
-    field:
-      from: "message"
-      to: "gem5.configImg"
-- drop_fields:
-    fields: ["message"]
-    ignore_missing: true
-

@@ -51,3 +51,6 @@ gem5-SimpleSSDDebugLog:
 .PHONY: gem5-SimpleSSDLog
 gem5-SimpleSSDLog:
 	make create-fields MODULE=gem FILESET=SimpleSSDLog
+.PHONY: gem5-GarnetSyntheticTraffic
+gem5-GarnetSyntheticTraffic:
+	make create-fields MODULE=gem FILESET=GarnetSyntheticTraffic
