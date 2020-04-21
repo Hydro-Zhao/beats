@@ -6,7 +6,7 @@ paths:
 exclude_files: [".gz$"]
 
 encoding: plain
-#include_lines: ['^data:image/png;base64,']
+include_lines: ['^data:image/png;base64,']
 harvester_buffer_size: 10485760
 max_bytes: 10485760
 
@@ -38,10 +38,6 @@ processors:
           //event.Delete("host.name");
 
           event.Put("gem5.timestamp", m5outTime);
-
-          var message = event.Get("message");
-          event.Put("gem5.configImg", message);
-          event.Delete("message");
       }
 #- decode_base64_field:
 #    field:
