@@ -50,4 +50,3 @@ processors:
 #- drop_fields:
 #    fields: ["message"]
 #    ignore_missing: true
-#

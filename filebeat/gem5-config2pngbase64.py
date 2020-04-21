@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-
 # base64.b64encode(open("filename.png", "rb").read())
 
 # In python3, base64.b64encode returns a bytes instance,
@@ -49,15 +48,20 @@ import pydot
 import os
 import dot_parser
 
-gem5_path = os.getenv('GEM5_PATH')
-if (gem5_path):
-    config_dot_path = os.path.join(gem5_path, "m5out/config.dot")
-    callgraph = pydot.graph_from_dot_file(config_dot_path)
-    if (callgraph):
-        png_string = callgraph[0].create_png()
-        # it seems that both with and without decode() work well
-        encoded = base64.b64encode(png_string).decode()
-        with open(os.path.join(gem5_path, "m5out/config.dot.png.base64"), "w+") as f:
-            f.write('data:image/png;base64,{}'.format(encoded))
-else:
-    print "The GEM5_PATH is not set. Can not create index for config.dot.svg."
+def config2pngbase64():
+    gem5_path = os.getenv('GEM5_PATH')
+    if (gem5_path):
+        config_dot_path = os.path.join(gem5_path, "m5out/config.dot")
+        callgraph = pydot.graph_from_dot_file(config_dot_path)
+        if (callgraph):
+            png_string = callgraph[0].create_png()
+            # it seems that both with and without decode() work well
+            encoded = base64.b64encode(png_string).decode()
+            with open(os.path.join(gem5_path, "m5out/config.dot.png.base64"), "w+") as f:
+                f.write('data:image/png;base64,{}'.format(encoded))
+    else:
+        print "The GEM5_PATH is not set. Can not create index for config.dot.svg."
+
+
+if __name__ == "__main__":
+    config2pngbase64()
