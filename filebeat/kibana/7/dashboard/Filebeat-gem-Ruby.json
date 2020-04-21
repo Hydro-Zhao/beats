@@ -5,7 +5,7 @@
         "description": "a log view of Ruby debug output",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
         "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":21,\"i\":\"2657fb1e-a055-4b11-a536-06cd72381a89\"},\"panelIndex\":\"2657fb1e-a055-4b11-a536-06cd72381a89\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"}]",
@@ -25,8 +25,8 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-21T05:25:26.014Z",
-      "version": "WzcwOTksMTdd"
+      "updated_at": "2020-04-21T08:21:55.293Z",
+      "version": "Wzg1ODksMTdd"
     },
     {
       "attributes": {
@@ -39,7 +39,7 @@
         "description": "",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"event.dataset\",\"params\":{\"query\":\"gem.Ruby\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match_phrase\":{\"event.dataset\":\"gem.Ruby\"}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+          "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\",\"key\":\"event.dataset\",\"negate\":false,\"params\":{\"query\":\"gem.Ruby\"},\"type\":\"phrase\"},\"query\":{\"match_phrase\":{\"event.dataset\":\"gem.Ruby\"}}}],\"highlightAll\":true,\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"version\":true}"
         },
         "sort": [
           [
@@ -71,8 +71,8 @@
         }
       ],
       "type": "search",
-      "updated_at": "2020-04-21T05:22:26.159Z",
-      "version": "WzcwOTcsMTdd"
+      "updated_at": "2020-04-21T08:21:55.293Z",
+      "version": "Wzg1OTAsMTdd"
     }
   ],
   "version": "7.6.1"

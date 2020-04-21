@@ -40,3 +40,5 @@ make create-fields MODULE=gem FILESET=SimpleSSDDebugLog
 make create-fields MODULE=gem FILESET=SimpleSSDLog
 make create-fields MODULE=gem FILESET=GarnetSyntheticTraffic
 make create-fields MODULE=gem FILESET=Ruby
+make create-fields MODULE=gem FILESET=RubyTopology
+make create-fields MODULE=gem FILESET=exec

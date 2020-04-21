@@ -1,0 +1,53 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "Tree graph, tree map graph, and flame graph",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        },
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"4107d553-4229-413d-809f-b91d36a251d6\"},\"panelIndex\":\"4107d553-4229-413d-809f-b91d36a251d6\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
+        "timeRestore": false,
+        "title": "[Filebeat gem] exec",
+        "version": 1
+      },
+      "id": "9360ade0-83fe-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      },
+      "references": [
+        {
+          "id": "6e0ed8a0-83fe-11ea-8f49-6f3f3c3c70e9",
+          "name": "panel_0",
+          "type": "visualization"
+        }
+      ],
+      "type": "dashboard",
+      "updated_at": "2020-04-21T18:33:20.574Z",
+      "version": "Wzg4NTMsMTdd"
+    },
+    {
+      "attributes": {
+        "description": "tree graph of ExecAll",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "Tree [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"Tree [Filebeat gem]\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\r\\n    \\\"$schema\\\": \\\"https://vega.github.io/schema/vega/v4.json\\\",\\r\\n    \\\"padding\\\": 5,\\r\\n    \\\"signals\\\": [\\r\\n      {\\r\\n        \\\"name\\\": \\\"method\\\",\\r\\n        \\\"value\\\": \\\"tidy\\\",\\r\\n        \\\"bind\\\": {\\\"input\\\": \\\"select\\\", \\\"options\\\": [\\\"tidy\\\", \\\"cluster\\\"]}\\r\\n      },\\r\\n      {\\\"name\\\": \\\"separation\\\", \\\"value\\\": true, \\\"bind\\\": {\\\"input\\\": \\\"checkbox\\\"}}\\r\\n    ],\\r\\n    \\\"data\\\": [\\r\\n      {\\r\\n        \\\"name\\\": \\\"tree\\\",\\r\\n        \\\"url\\\": {\\r\\n          \\\"%context%\\\": true,\\r\\n          \\\"%timefield%\\\": \\\"@timestamp\\\",\\r\\n          \\\"index\\\": \\\"gem5-filebeat-*\\\",\\r\\n          \\\"body\\\": {\\\"_source\\\": \\\"gem5.exec\\\"},\\r\\n          \\\"format\\\": {\\\"property\\\": \\\"hits.hits[0]._source.gem5.exec\\\"}\\r\\n        },\\r\\n        \\\"transform\\\": [\\r\\n          {\\\"type\\\": \\\"stratify\\\", \\\"key\\\": \\\"id\\\", \\\"parentKey\\\": \\\"parent\\\"},\\r\\n          {\\r\\n            \\\"type\\\": \\\"tree\\\",\\r\\n            \\\"method\\\": {\\\"signal\\\": \\\"method\\\"},\\r\\n            \\\"separation\\\": {\\\"signal\\\": \\\"separation\\\"},\\r\\n            \\\"size\\\": [{\\\"signal\\\": \\\"width\\\"}, {\\\"signal\\\": \\\"height\\\"}]\\r\\n          }\\r\\n        ]\\r\\n      },\\r\\n      {\\r\\n        \\\"name\\\": \\\"links\\\",\\r\\n        \\\"source\\\": \\\"tree\\\",\\r\\n        \\\"transform\\\": [{\\\"type\\\": \\\"treelinks\\\"}, {\\\"type\\\": \\\"linkpath\\\"}]\\r\\n      }\\r\\n    ],\\r\\n    \\\"scales\\\": [\\r\\n      {\\\"name\\\": \\\"color\\\", \\\"type\\\": \\\"ordinal\\\", \\\"range\\\": {\\\"scheme\\\": \\\"category20\\\"}}\\r\\n    ],\\r\\n    \\\"marks\\\": [\\r\\n      {\\r\\n        \\\"type\\\": \\\"path\\\",\\r\\n        \\\"from\\\": {\\\"data\\\": \\\"links\\\"},\\r\\n        \\\"encode\\\": {\\r\\n          \\\"enter\\\": {\\\"stroke\\\": {\\\"value\\\": \\\"#ccc\\\"}},\\r\\n          \\\"update\\\": {\\\"path\\\": {\\\"field\\\": \\\"path\\\"}}\\r\\n        }\\r\\n      },\\r\\n      {\\r\\n        \\\"type\\\": \\\"symbol\\\",\\r\\n        \\\"from\\\": {\\\"data\\\": \\\"tree\\\"},\\r\\n        \\\"encode\\\": {\\r\\n          \\\"enter\\\": {\\r\\n            \\\"fill\\\": {\\\"scale\\\": \\\"color\\\", \\\"field\\\": \\\"id\\\"},\\r\\n            \\\"stroke\\\": {\\\"value\\\": \\\"white\\\"},\\r\\n            \\\"size\\\": {\\\"value\\\": 400}\\r\\n          },\\r\\n          \\\"update\\\": {\\\"x\\\": {\\\"field\\\": \\\"x\\\"}, \\\"y\\\": {\\\"field\\\": \\\"y\\\"}}\\r\\n        }\\r\\n      }\\r\\n    ]\\r\\n  }\"},\"aggs\":[]}"
+      },
+      "id": "6e0ed8a0-83fe-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [],
+      "type": "visualization",
+      "updated_at": "2020-04-21T18:32:17.962Z",
+      "version": "Wzg4NTIsMTdd"
+    }
+  ],
+  "version": "7.6.1"
+}

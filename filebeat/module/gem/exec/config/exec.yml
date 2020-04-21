@@ -1,0 +1,58 @@
+type: log
+paths:
+{{ range $i, $path := .paths }}
+ - {{$path}}
+{{ end }}
+exclude_files: [".gz$"]
+
+harvester_buffer_size: 10485760
+
+close_eof: true
+clean_removed: true
+
+multiline.pattern: '^\s*\d+'
+multiline.negate: false
+multiline.match: before
+multiline.max_lines: 10000
+max_bytes: 10485760
+
+processors:
+- add_locale: ~
+- script:
+    lang: javascript
+    id: gem_exec
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
+    source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
+      function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          event.Put("gem5.timestamp", m5outTime);
+          
+          var message = event.Get("message");
+          
+          var lines = message.split(/\n/);
+          for(var lineNum=0; lineNum<lines.length; ++lineNum) {
+              var line = lines[lineNum].split(" ");
+              var node = {};
+              node["id"] = Number(line[0]);
+              node["name"] = line[1];
+              if (Number(line[2]) !=  0){
+                  node["parent"] = Number(line[2]);
+              }
+              node["size"] = Number(line[3]);
+              var nodeString = JSON.stringify(node);
+              event.AppendTo("gem5.exec", nodeString); 
+          }
+
+          event.Delete("message");
+      }

@@ -9,3 +9,5 @@ dashboards:
   file: Filebeat-gem-Ruby.json
 - id: 76252510-83b0-11ea-8f49-6f3f3c3c70e9
   file: Filebeat-gem-RubyTopology.json
+- id: 9360ade0-83fe-11ea-8f49-6f3f3c3c70e9 
+  file: Filebeat-gem-exec.json

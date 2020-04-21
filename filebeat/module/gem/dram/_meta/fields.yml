@@ -23,7 +23,3 @@
     description: Please add description
     example: Please add example
     type: keyword
-  - name: address
-    description: Please add description
-    example: Please add example
-    type: long

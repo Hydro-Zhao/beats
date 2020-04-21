@@ -5,7 +5,7 @@
         "description": "TODO: \nAdd cache control and directory control nodes. \nAdd features like https://github.com/dhcabinian/Loupe.",
         "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
         },
         "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
         "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":20,\"i\":\"401425fb-f0e0-49ca-992b-a933514d66c1\"},\"panelIndex\":\"401425fb-f0e0-49ca-992b-a933514d66c1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
@@ -25,8 +25,8 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-21T17:54:54.728Z",
-      "version": "Wzg4MzAsMTdd"
+      "updated_at": "2020-04-21T09:17:48.938Z",
+      "version": "Wzg2MTMsMTdd"
     },
     {
       "attributes": {
@@ -45,8 +45,8 @@
       },
       "references": [],
       "type": "visualization",
-      "updated_at": "2020-04-21T17:54:54.728Z",
-      "version": "Wzg4MzEsMTdd"
+      "updated_at": "2020-04-21T09:11:24.535Z",
+      "version": "Wzg2MDksMTdd"
     }
   ],
   "version": "7.6.1"
