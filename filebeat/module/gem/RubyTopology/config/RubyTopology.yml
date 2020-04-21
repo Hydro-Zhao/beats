@@ -45,7 +45,10 @@ processors:
               if (lines[lineNum].match("dir_cntrl")) {
                   if (lines[lineNum].match("color")) {
                       var nums = lines[lineNum].match(/\d+/g);
-                      event.AppendTo("gem5.RubyTopology.dir_cntrl_id", Number(nums[0])); 
+                      var node = {};
+                      node["id"] = Number(nums[0]);
+                      var nodeString = JSON.stringify(node);
+                      event.AppendTo("gem5.RubyTopology.dir_cntrl_id", nodeString); 
                   } else {
                       var nums = lines[lineNum].match(/\d+/g);
                       var link = {};
@@ -58,8 +61,11 @@ processors:
               } else if (lines[lineNum].match("_cntrl")) {
                   if (lines[lineNum].match("color")) {
                       var nums = lines[lineNum].match(/\d+/g);
+                      var node = {};
+                      node["id"] = Number(nums[0]);
+                      var nodeString = JSON.stringify(node);
                       // although cache control is ..., ... is not supported
-                      event.AppendTo("gem5.RubyTopology.l"+nums[0]+"cache_cntrl_id", Number(nums[1])); 
+                      event.AppendTo("gem5.RubyTopology.l"+nums[0]+"cache_cntrl_id", nodeString); 
                   } else {
                       var nums = lines[lineNum].match(/\d+/g);
                       var link = {};
@@ -73,7 +79,10 @@ processors:
               } else if (lines[lineNum].match("routers")) {
                   if (lines[lineNum].match("color")) {
                       var nums = lines[lineNum].match(/\d+/g);
-                      event.AppendTo("gem5.RubyTopology.router_id", Number(nums[0])); 
+                      var node = {};
+                      node["id"] = Number(nums[0]);
+                      var nodeString = JSON.stringify(node);
+                      event.AppendTo("gem5.RubyTopology.router_id", nodeString); 
                   } else {
                       var nums = lines[lineNum].match(/\d+/g);
                       var link = {};
