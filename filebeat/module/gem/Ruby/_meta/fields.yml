@@ -1,0 +1,21 @@
+- name: Ruby
+  description: Please add description
+  example: Please add example
+  type: group
+  fields:
+  - name: Network
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: tick
+    description: Please add description
+    example: Please add example
+    type: key
+  - name: Sim_Object
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: info
+    description: Please add description
+    example: Please add example
+    type: text

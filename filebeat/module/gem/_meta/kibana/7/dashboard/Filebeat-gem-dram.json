@@ -30,8 +30,8 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-14T09:02:18.465Z",
-      "version": "WzQ0MSwxXQ=="
+      "updated_at": "2020-04-21T05:06:39.776Z",
+      "version": "WzcwNjksMTdd"
     },
     {
       "attributes": {
@@ -56,14 +56,14 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T08:54:44.863Z",
-      "version": "WzQyOSwxXQ=="
+      "updated_at": "2020-04-21T05:06:41.866Z",
+      "version": "WzcwODAsMTdd"
     },
     {
       "attributes": {
         "description": "DRAM access HeatMap",
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+          "searchSourceJSON": "{\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\",\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "title": "HeatMap [Filebeat gem]",
         "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 40\":\"rgb(255,245,240)\",\"40 - 80\":\"rgb(254,228,216)\",\"80 - 120\":\"rgb(253,202,181)\",\"120 - 160\":\"rgb(252,171,142)\",\"160 - 200\":\"rgb(252,138,106)\",\"200 - 240\":\"rgb(251,106,74)\",\"240 - 280\":\"rgb(241,68,50)\",\"280 - 320\":\"rgb(217,38,35)\",\"320 - 360\":\"rgb(188,20,26)\",\"360 - 400\":\"rgb(152,12,19)\"}}}",
@@ -82,8 +82,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-14T07:23:40.888Z",
-      "version": "WzQyNSwxXQ=="
+      "updated_at": "2020-04-21T05:06:39.776Z",
+      "version": "WzcwNzEsMTdd"
     }
   ],
   "version": "7.6.1"

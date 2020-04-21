@@ -1,0 +1,90 @@
+type: log
+paths:
+{{ range $i, $path := .paths }}
+ - {{$path}}
+{{ end }}
+exclude_files: [".gz$"]
+
+harvester_buffer_size: 200000
+
+close_eof: true
+clean_removed: true
+
+#include_lines: ['^"system.ruby.network.routers\d+" -- "system.ruby.network.routers\d+";']
+multiline.pattern: '^graph G {'
+multiline.negate: true
+multiline.match: after
+multiline.flush_pattern: '^}'
+
+processors:
+- add_locale: ~
+- script:
+    lang: javascript
+    id: gem_RubyTopology
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
+    source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
+      function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          event.Put("gem5.timestamp", m5outTime);
+          
+          var message = event.Get("message");
+          
+          var lines = message.split(/\n/);
+          for(var lineNum=0; lineNum<lines.length; ++lineNum) {
+              if (lines[lineNum].match("dir_cntrl")) {
+                  if (lines[lineNum].match("color")) {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      event.AppendTo("gem5.RubyTopology.dir_cntrl_id", Number(nums[0])); 
+                  } else {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      var link = {};
+                      link["source"] = Number(nums[0]);
+                      link["target"] = Number(nums[1]);
+                      var linkString = JSON.stringify(link);
+                      // directory control -- router
+                      event.AppendTo("gem5.RubyTopology.dir_cntrl_link", linkString);
+                  }
+              } else if (lines[lineNum].match("_cntrl")) {
+                  if (lines[lineNum].match("color")) {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      // although cache control is ..., ... is not supported
+                      event.AppendTo("gem5.RubyTopology.l"+nums[0]+"cache_cntrl_id", Number(nums[1])); 
+                  } else {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      var link = {};
+                      link["source"] = Number(nums[0]);
+                      link["target"] = Number(nums[1]);
+                      var linkString = JSON.stringify(link);
+                      // just support l1 cache control now
+                      // cache control -- router
+                      event.AppendTo("gem5.RubyTopology.l1cache_cntrl_link", linkString);
+                  }
+              } else if (lines[lineNum].match("routers")) {
+                  if (lines[lineNum].match("color")) {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      event.AppendTo("gem5.RubyTopology.router_id", Number(nums[0])); 
+                  } else {
+                      var nums = lines[lineNum].match(/\d+/g);
+                      var link = {};
+                      link["source"] = Number(nums[0]);
+                      link["target"] = Number(nums[1]);
+                      var linkString = JSON.stringify(link);
+                      // router -- router
+                      event.AppendTo("gem5.RubyTopology.router_link", linkString);
+                  }
+              }
+          }
+
+          event.Delete("message");
+      }

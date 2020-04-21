@@ -1,48 +1,60 @@
 - module: gem
   # All logs
   stats:
-    enabled: true
+    enabled: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   config:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   pipeview:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   dram:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
  
   configImg:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   SimpleSSDLog:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   SimpleSSDDebugLog:
-    enable: true
+    enable: false
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
-    #
+
   GarnetSyntheticTraffic:
+    enable: false
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
+  Ruby:
+    enable: false
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
+  RubyTopology:
     enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.

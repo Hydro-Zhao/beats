@@ -44,6 +44,9 @@ processors:
           //event.Delete("ecs.version");
           //event.Delete("host.name");
 
+          //m5outTime = new Date(m5outTime).toISOString();
+          event.Put("gem5.timestamp", m5outTime);
+
           var gemStatsMessage = event.Get("message");
           var lines = gemStatsMessage.split(/\n/);
           var stats = {};
@@ -67,8 +70,6 @@ processors:
                   }
               }
           }
-          //m5outTime = new Date(m5outTime).toISOString();
-          event.Put("gem5.timestamp", m5outTime);
 
           var gem5Stats = JSON.stringify(stats);
           event.Put("gem5.stats", gem5Stats);

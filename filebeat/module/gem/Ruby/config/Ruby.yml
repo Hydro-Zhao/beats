@@ -5,19 +5,19 @@ paths:
 {{ end }}
 exclude_files: [".gz$"]
 
-encoding: plain
-#include_lines: ['^data:image/png;base64,']
-harvester_buffer_size: 10485760
-max_bytes: 10485760
-
+harvester_buffer_size: 200000
 close_eof: true
 clean_removed: true
+
+multiline.pattern: '^\s*\d+'
+multiline.negate: true
+multiline.match: after
 
 processors:
 - add_locale: ~
 - script:
     lang: javascript
-    id: gem_configImg
+    id: gem_Ruby
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -29,7 +29,6 @@ processors:
           event.Delete("event.module");
           event.Delete("input.type");
           event.Delete("log.file");
-          event.Delete("log.offset");
           event.Delete("log.flags");
           event.Delete("fileset.name");
           event.Delete("service.type");
@@ -38,16 +37,4 @@ processors:
           //event.Delete("host.name");
 
           event.Put("gem5.timestamp", m5outTime);
-
-          var message = event.Get("message");
-          event.Put("gem5.configImg", message);
-          event.Delete("message");
       }
-#- decode_base64_field:
-#    field:
-#      from: "message"
-#      to: "gem5.configImg"
-#- drop_fields:
-#    fields: ["message"]
-#    ignore_missing: true
-#

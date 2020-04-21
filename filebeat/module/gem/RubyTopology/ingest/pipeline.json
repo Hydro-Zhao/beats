@@ -1,0 +1,70 @@
+{
+  "description": "Pipeline for parsing gem RubyTopology logs",
+  "processors": [
+      {
+          "json": {
+              "field" : "gem5.RubyTopology.dir_cntrl_id"
+          }
+      },
+      {
+          "json": {
+              "field" : "gem5.RubyTopology.dir_cntrl_link"
+          }
+      },
+      {
+          "json": {
+              "field" :"gem5.RubyTopology.l1cache_cntrl_link" 
+          }
+      },
+      {
+          "json": {
+              "field" :"gem5.RubyTopology.router_id" 
+          }
+      },
+      {
+          "json": {
+              "field" :"gem5.RubyTopology.router_link" 
+          }
+      },
+      {
+          "date": {
+              "if": "ctx.event.timezone == null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "date": {
+              "if": "ctx.event.timezone != null",
+              "field": "gem5.timestamp",
+              "target_field": "@timestamp",
+              "formats": [
+                  "MMM  d HH:mm:ss",
+                  "MMM dd HH:mm:ss",
+                  "MMM d HH:mm:ss",
+                  "ISO8601"
+              ],
+              "timezone": "{{ event.timezone }}",
+              "on_failure": [{"append": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}}]
+          }
+      },
+      {
+          "remove": {
+              "field": "gem5.timestamp"
+          }
+      }
+    ],
+  "on_failure" : [{
+    "set" : {
+      "field" : "error.message",
+      "value" : "{{ _ingest.on_failure_message }}"
+    }
+  }]
+}
