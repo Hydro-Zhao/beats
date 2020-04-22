@@ -106,32 +106,38 @@ def exec_list2tree(final_tree_list):
             nodes[i.id] = ExecAllTree(i.id, i.name, i.size, parent=nodes[i.parent])
     return nodes[1]
 
-def print_stack_flame(path_list):
-    path = ''
+def line_path_stack_flame(path_list):
+    line_path = ''
     for i in path_list:
-        path = path + i.name + ','
-    size = path_list[len(path_list)-1].size
-    path = path[0:len(path)-1] + '  ' + str(size)
-    print path
+        line_path = line_path + i.name + ','
+    return line_path
 
 def shrink_stack_flame(path_list, size):
     for i in path_list:
         i.size = i.size - size
 
-def exec_tree2flame(root, path_list):
+def make_stack_flame(path_list, path_dict):
+    line_path = line_path_stack_flame(path_list)
+    size = path_list[len(path_list)-1].size
+    path_list.pop()
+    shrink_stack_flame(path_list, size)
+    if line_path in path_dict:
+        path_dict[line_path] = path_dict[line_path] + size
+    else:
+        path_dict[line_path] = size
+
+def print_stack_flame(path_dict):
+    for key,value in path_dict.items():
+        print key+'  '+str(value)
+
+def exec_tree2flame(root, path_list, path_dict):
     for node in root.children:
         path_list.append(node)
         if (node.children):
-            exec_tree2flame(node, path_list)
-            print_stack_flame(path_list)
-            size = path_list[len(path_list)-1].size
-            path_list.pop()
-            shrink_stack_flame(path_list, size)
+            exec_tree2flame(node, path_list, path_dict)
+            make_stack_flame(path_list, path_dict)
         else:
-            print_stack_flame(path_list)
-            size = path_list[len(path_list)-1].size
-            path_list.pop()
-            shrink_stack_flame(path_list, size)
+            make_stack_flame(path_list, path_dict)
 
 if __name__ == "__main__":
     gem5_path = os.getenv('GEM5_PATH')
@@ -144,7 +150,9 @@ if __name__ == "__main__":
         #print_exec_list2tree(final_list)
         root = exec_list2tree(final_list)
         #print_exec_tree(root)
+        path_dict = {}
         path_list = []
-        exec_tree2flame(root, path_list)
+        exec_tree2flame(root, path_list, path_dict)
+        print_stack_flame(path_dict)
     else:
         print "The GEM5_PATH is not set. Can not create ExecAllFilebeat.txt"
