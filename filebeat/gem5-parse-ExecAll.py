@@ -32,55 +32,41 @@ def parse_ExecAll(path_ExecAll):
                 line_split = re.split('\s*:\s*', line, maxsplit=4)
                 if (len(line_split) >= 4):
                     pre_ins = line_split[4]
+
+                    if (line_split[3].find('+') != -1):
+                        index = line_split[3].find('+')
+                    elif (line_split[3].find('.') != -1):
+                        index = line_split[3].find('.')
+                    else:
+                        index = len(line_split[3])
+                    name = line_split[3][0:index]
+
                     if (len(exec_list) == 0):
-                        if (line_split[3].find('+') != -1 or line_split[3].find('.') != -1):
-                            index = max(line_split[3].find('+'),line_split[3].find('.'))
-                        else:
-                            index = len(line_split[3])
-                        name = line_split[3][0:index]
                         exec_list.append(ExecAll(id, name, 0, 0))
                         add_size(exec_list)
                         id = id + 1
-                    elif (line_split[3].find(exec_list[len(exec_list)-1].name) == 0):
+                    elif (name == exec_list[len(exec_list)-1].name):
                         add_size(exec_list)
                     else:
-                        if (len(exec_list) == 1):
-                            if (pre_ins.find("JMP_") == -1):
-                                if (line_split[3].find('+') != -1 or line_split[3].find('.') != -1):
-                                    index = max(line_split[3].find('+'),line_split[3].find('.'))
-                                else:
-                                    index = len(line_split[3])
-                                name = line_split[3][0:index]
-                                exec_list.append(ExecAll(id, name, exec_list[0].id, 0))
-                                add_size(exec_list)
-                                id = id + 1
-                            else:
-                                final_list.append(exec_list.pop())
-                        elif (line_split[3].find(exec_list[len(exec_list)-2].name) == 0):
-                            if (pre_ins.find("JMP_") == -1):
-                                final_list.append(exec_list.pop())
-                                add_size(exec_list)
-                            else:
-                                final_list.append(exec_list.pop())
-                        else:
-                            if (pre_ins.find("JMP_") == -1):
-                                if (line_split[3].find('+') != -1 or line_split[3].find('.') != -1):
-                                    index = max(line_split[3].find('+'),line_split[3].find('.'))
-                                else:
-                                    index = len(line_split[3])
-                                name = line_split[3][0:index]
-                                exec_list.append(ExecAll(id, name, exec_list[len(exec_list)-1].id, 0))
-                                add_size(exec_list)
-                                id = id + 1
-                            else:
-                                final_list.append(exec_list.pop())
+                        if (pre_ins.find("RET_") != -1):
+                            final_list.append(exec_list.pop())
+                            add_size(exec_list)
+                        elif (pre_ins.find("CALL_") != -1):
+                            exec_list.append(ExecAll(id, name, exec_list[len(exec_list)-1].parent, 0))
+                            add_size(exec_list)
+                            id = id + 1
+                        elif (pre_ins.find("JMP_") != -1):
+                            parent = exec_list[len(exec_list)-1].parent
+                            final_list.append(exec_list.pop())
+                            exec_list.append(ExecAll(id, name, parent, 0))
+                            add_size(exec_list)
+                            id = id + 1
                 else:
                     continue
             else:
                 break
         for i in exec_list:
             final_list.append(i)
-        #final_list.append(exec_list.pop())
         return final_list
 
 if __name__ == "__main__":
