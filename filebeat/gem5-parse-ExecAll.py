@@ -31,8 +31,6 @@ def parse_ExecAll(path_ExecAll):
             if (line):
                 line_split = re.split('\s*:\s*', line, maxsplit=4)
                 if (len(line_split) >= 4):
-                    pre_ins = line_split[4]
-
                     if (line_split[3].find('+') != -1):
                         index = line_split[3].find('+')
                     elif (line_split[3].find('.') != -1):
@@ -52,7 +50,7 @@ def parse_ExecAll(path_ExecAll):
                             final_list.append(exec_list.pop())
                             add_size(exec_list)
                         elif (pre_ins.find("CALL_") != -1):
-                            exec_list.append(ExecAll(id, name, exec_list[len(exec_list)-1].parent, 0))
+                            exec_list.append(ExecAll(id, name, exec_list[len(exec_list)-1].id, 0))
                             add_size(exec_list)
                             id = id + 1
                         elif (pre_ins.find("JMP_") != -1):
@@ -61,6 +59,8 @@ def parse_ExecAll(path_ExecAll):
                             exec_list.append(ExecAll(id, name, parent, 0))
                             add_size(exec_list)
                             id = id + 1
+
+                    pre_ins = line_split[4]
                 else:
                     continue
             else:
