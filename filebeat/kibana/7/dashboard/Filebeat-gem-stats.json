@@ -25,8 +25,8 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-21T17:54:57.825Z",
-      "version": "Wzg4NDIsMTdd"
+      "updated_at": "2020-04-22T15:15:14.190Z",
+      "version": "Wzk2OTYsMTdd"
     },
     {
       "attributes": {
@@ -51,8 +51,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-21T17:54:57.825Z",
-      "version": "Wzg4NDMsMTdd"
+      "updated_at": "2020-04-22T15:15:14.190Z",
+      "version": "Wzk2OTcsMTdd"
     }
   ],
   "version": "7.6.1"

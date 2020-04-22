@@ -57,11 +57,14 @@ def config2pngbase64():
             png_string = callgraph[0].create_png()
             # it seems that both with and without decode() work well
             encoded = base64.b64encode(png_string).decode()
+            encoded = 'data:image/png;base64,{}'.format(encoded)
             with open(os.path.join(gem5_path, "m5out/config.dot.png.base64"), "w+") as f:
-                f.write('data:image/png;base64,{}'.format(encoded))
+                length = len(encoded)
+                for i in range(length-80,79,-80):
+                    if (i>=0 and i<=len(encoded)):
+                        encoded = encoded[0:i] + '\n' + encoded[i:]
+                f.write(encoded)
     else:
         print "The GEM5_PATH is not set. Can not create index for config.dot.svg."
-
-
 if __name__ == "__main__":
     config2pngbase64()

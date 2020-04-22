@@ -20,7 +20,7 @@ processors:
 - add_locale: ~
 - script:
     lang: javascript
-    id: gem_exec
+    id: gem_ExecRelation
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -51,7 +51,7 @@ processors:
               }
               node["size"] = Number(line[3]);
               var nodeString = JSON.stringify(node);
-              event.AppendTo("gem5.exec", nodeString); 
+              event.AppendTo("gem5.ExecRelation", nodeString); 
           }
 
           event.Delete("message");

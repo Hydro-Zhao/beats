@@ -42,3 +42,4 @@ make create-fields MODULE=gem FILESET=GarnetSyntheticTraffic
 make create-fields MODULE=gem FILESET=Ruby
 make create-fields MODULE=gem FILESET=RubyTopology
 make create-fields MODULE=gem FILESET=exec
+make create-fields MODULE=gem FILESET=ExecFlameTmp

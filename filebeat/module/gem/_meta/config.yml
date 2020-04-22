@@ -1,55 +1,55 @@
 - module: gem
   # All logs
   stats:
-    enabled: false
+    enabled: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   config:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   pipeview:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   dram:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
  
   configImg:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   SimpleSSDLog:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
     
   SimpleSSDDebugLog:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   GarnetSyntheticTraffic:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
   Ruby:
-    enable: false
+    enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
@@ -60,7 +60,13 @@
     # Filebeat will choose the paths depending on your OS.
     #var.paths:
 
-  exec:
+  ExecRelation:
+    enable: true
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
+  ExecBar:
     enable: true
     # Set custom paths for the log files. If left empty,
     # Filebeat will choose the paths depending on your OS.

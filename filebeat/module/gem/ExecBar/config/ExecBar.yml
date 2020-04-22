@@ -5,17 +5,6 @@ paths:
 {{ end }}
 exclude_files: [".gz$"]
 
-harvester_buffer_size: 10485760
-
-#encoding: plain
-#include_lines: ['^data:image/png;base64,']
-multiline.pattern: '^data:image/png;base64,'
-multiline.negate: true
-multiline.match: after
-multiline.max_lines: 2000
-
-max_bytes: 10485760
-
 close_eof: true
 clean_removed: true
 
@@ -23,7 +12,7 @@ processors:
 - add_locale: ~
 - script:
     lang: javascript
-    id: gem_configImg
+    id: gem_ExecBar
     params:
       m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
     source: >
@@ -39,21 +28,11 @@ processors:
           event.Delete("log.flags");
           event.Delete("fileset.name");
           event.Delete("service.type");
-          //ecs.version is added after beats event
-          //event.Delete("ecs.version");
-          //event.Delete("host.name");
           event.Put("gem5.timestamp", m5outTime);
 
           var message = event.Get("message");
-          message = message.replace(/\n/g,"");
-          event.Put("gem5.configImg", message);
-
+          var line = message.split(' ');
+          event.Put("gem5.Exec.Bar.X-axis", Number(line[0]));
+          event.Put("gem5.Exec.Bar.Y-axis", Number(line[1]));
           event.Delete("message");
       }
-#- decode_base64_field:
-#    field:
-#      from: "message"
-#      to: "gem5.configImg"
-#- drop_fields:
-#    fields: ["message"]
-#    ignore_missing: true

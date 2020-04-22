@@ -1,9 +1,9 @@
 {
-  "description": "Pipeline for parsing gem exec logs",
+  "description": "Pipeline for parsing gem ExecRelation logs",
   "processors": [
       {
           "json": {
-              "field" : "gem5.exec"
+              "field" : "gem5.ExecRelation"
           }
       },
       {

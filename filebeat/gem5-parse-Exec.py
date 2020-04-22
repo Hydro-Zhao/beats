@@ -12,7 +12,7 @@ class ExecAll:
         self.parent = parent
         self.size = size
 
-def write_ExecAllFilebeat(path_ExecAllFilebeat, final_list):
+def write_ExecRelation(path_ExecAllFilebeat, final_list):
     with open(path_ExecAllFilebeat, 'w+') as f:
         for i in final_list:
             f.write(str(i.id)+' '+i.name+' '+str(i.parent)+' '+str(i.size)+'\n')
@@ -70,7 +70,7 @@ def parse_ExecAll(path_ExecAll):
             final_list.append(i)
         return final_list
 
-# tree
+#-------------------------------------------- tree -------------------------------------------------
 class ExecAllTree(NodeMixin):
     def __init__(self, id, name, size, parent=None, children=None):
         self.id = id
@@ -139,13 +139,28 @@ def exec_tree2flame(root, path_list, path_dict):
         else:
             make_stack_flame(path_list, path_dict)
 
+
+# -----------------------------------------------------
+
+def write_ExecBar(path_ExecBar, path_dict):
+    with open(path_ExecBar, 'w+') as f:
+        id = 1
+        for key,value in path_dict.items():
+            for i in range(value):
+                line = str(id)
+                id = id + 1
+                num = len(key.split(','))
+                line = line + ' ' + str(num) + '\n'
+                f.write(line)
+
+
 if __name__ == "__main__":
     gem5_path = os.getenv('GEM5_PATH')
     if (gem5_path):
         path_ExecAll = os.path.join(gem5_path, "m5out/ExecAll.txt")
         final_list = parse_ExecAll(path_ExecAll)
-        #path_ExecAllFilebeat = os.path.join(gem5_path, "m5out/ExecAllFilebeat.txt")
-        #write_ExecAllFilebeat(path_ExecAllFilebeat, final_list)
+        path_ExecRelation = os.path.join(gem5_path, "m5out/ExecRelation.txt")
+        write_ExecRelation(path_ExecRelation, final_list)
 
         #print_exec_list2tree(final_list)
         root = exec_list2tree(final_list)
@@ -154,5 +169,9 @@ if __name__ == "__main__":
         path_list = []
         exec_tree2flame(root, path_list, path_dict)
         print_stack_flame(path_dict)
+
+        path_ExecBar = os.path.join(gem5_path, "m5out/ExecBar.txt")
+        write_ExecBar(path_ExecBar, path_dict)
+
     else:
         print "The GEM5_PATH is not set. Can not create ExecAllFilebeat.txt"
