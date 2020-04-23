@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# TODO an option to specific the name of the simulation output, pass it as an option of ./filebeat 
-
-# 
 curl -X DELETE "localhost:5601/s/gem5/api/saved_objects/index-pattern/gem5-filebeat-*" -H 'kbn-xsrf: true'
 curl -X DELETE "localhost:5601/api/spaces/space/gem5" -H 'kbn-xsrf: true'
 curl -X POST "localhost:5601/api/spaces/space" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d'
@@ -24,25 +21,8 @@ curl -X POST "localhost:5601/s/gem5/api/saved_objects/index-pattern/gem5-filebea
 }
 '
 
+make update
+cp filebeat.gem.yml filebeat.yml
 
 # for easily to test, delete later
 curl -XDELETE 'http://localhost:9200/gem5-filebeat-*'
-
-
-# deploy
-export M5OUT_MODIFICATION_TIME=$(date +%Y.%m.%d'-'%H.%M.%S -r $GEM5_PATH/m5out)
-export M5OUT_MODIFICATION_TIME_FIELD=$(date +%F'T'%T%z -r $GEM5_PATH/m5out)
-
-rm -f data/registry/filebeat/data.json
-
-make update
-
-cp filebeat.gem.yml filebeat.yml
-
-rm -rf kibana
-mkdir -p kibana/7/dashboard
-cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
-
-./filebeat setup
-./filebeat modules enable gem
-./filebeat -e

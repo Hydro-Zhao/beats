@@ -8,7 +8,7 @@
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
-        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":21,\"i\":\"2657fb1e-a055-4b11-a536-06cd72381a89\"},\"panelIndex\":\"2657fb1e-a055-4b11-a536-06cd72381a89\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"}]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":48,\"h\":12,\"i\":\"2657fb1e-a055-4b11-a536-06cd72381a89\"},\"panelIndex\":\"2657fb1e-a055-4b11-a536-06cd72381a89\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":7,\"i\":\"f53185fc-27d1-413e-831e-303385b22e13\"},\"panelIndex\":\"f53185fc-27d1-413e-831e-303385b22e13\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] Ruby",
         "version": 1
@@ -22,11 +22,16 @@
           "id": "165797f0-8390-11ea-8f49-6f3f3c3c70e9",
           "name": "panel_0",
           "type": "search"
+        },
+        {
+          "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+          "name": "panel_1",
+          "type": "visualization"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-22T15:15:10.041Z",
-      "version": "Wzk2ODEsMTdd"
+      "updated_at": "2020-04-23T06:33:41.773Z",
+      "version": "WzEwMjM3LDE3XQ=="
     },
     {
       "attributes": {
@@ -71,8 +76,34 @@
         }
       ],
       "type": "search",
-      "updated_at": "2020-04-22T15:15:10.041Z",
-      "version": "Wzk2ODIsMTdd"
+      "updated_at": "2020-04-23T06:29:01.159Z",
+      "version": "WzEwMjIwLDE3XQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "options list [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"options list [Filebeat gem]\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1586854291298\",\"fieldName\":\"@timestamp\",\"parent\":\"\",\"label\":\"select an experiment\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":20,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}"
+      },
+      "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "control_0_index_pattern",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-23T06:29:05.248Z",
+      "version": "WzEwMjM0LDE3XQ=="
     }
   ],
   "version": "7.6.1"

@@ -52,7 +52,10 @@ def config2pngbase64():
     gem5_path = os.getenv('GEM5_PATH')
     if (gem5_path):
         config_dot_path = os.path.join(gem5_path, "m5out/config.dot")
-        callgraph = pydot.graph_from_dot_file(config_dot_path)
+        try:
+            callgraph = pydot.graph_from_dot_file(config_dot_path)
+        except:
+            return
         if (callgraph):
             png_string = callgraph[0].create_png()
             # it seems that both with and without decode() work well

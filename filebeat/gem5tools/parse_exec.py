@@ -168,7 +168,7 @@ if __name__ == "__main__":
         path_dict = {}
         path_list = []
         exec_tree2flame(root, path_list, path_dict)
-        print_stack_flame(path_dict)
+        #print_stack_flame(path_dict)
 
         path_ExecBar = os.path.join(gem5_path, "m5out/ExecBar.txt")
         write_ExecBar(path_ExecBar, path_dict)

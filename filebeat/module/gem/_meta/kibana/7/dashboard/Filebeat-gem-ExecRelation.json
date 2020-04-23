@@ -8,7 +8,7 @@
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"h\":37,\"i\":\"4107d553-4229-413d-809f-b91d36a251d6\",\"w\":48,\"x\":0,\"y\":0},\"panelIndex\":\"4107d553-4229-413d-809f-b91d36a251d6\",\"version\":\"7.6.1\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":55,\"i\":\"02ed56ba-7736-4349-bb1b-0349855ce658\",\"w\":48,\"x\":0,\"y\":37},\"panelIndex\":\"02ed56ba-7736-4349-bb1b-0349855ce658\",\"version\":\"7.6.1\",\"panelRefName\":\"panel_1\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":32,\"i\":\"b73a195e-c3e0-4659-955a-9d53c64d5b58\",\"w\":48,\"x\":0,\"y\":92},\"panelIndex\":\"b73a195e-c3e0-4659-955a-9d53c64d5b58\",\"version\":\"7.6.1\",\"panelRefName\":\"panel_2\"}]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":48,\"h\":37,\"i\":\"4107d553-4229-413d-809f-b91d36a251d6\"},\"panelIndex\":\"4107d553-4229-413d-809f-b91d36a251d6\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":44,\"w\":48,\"h\":55,\"i\":\"02ed56ba-7736-4349-bb1b-0349855ce658\"},\"panelIndex\":\"02ed56ba-7736-4349-bb1b-0349855ce658\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":99,\"w\":48,\"h\":32,\"i\":\"b73a195e-c3e0-4659-955a-9d53c64d5b58\"},\"panelIndex\":\"b73a195e-c3e0-4659-955a-9d53c64d5b58\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":7,\"i\":\"34051376-1bb4-43c1-bb11-4963d8de727a\"},\"panelIndex\":\"34051376-1bb4-43c1-bb11-4963d8de727a\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] Exec",
         "version": 1
@@ -32,11 +32,16 @@
           "id": "48d36190-84ae-11ea-8f49-6f3f3c3c70e9",
           "name": "panel_2",
           "type": "visualization"
+        },
+        {
+          "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+          "name": "panel_3",
+          "type": "visualization"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-22T15:44:58.424Z",
-      "version": "Wzk4NTksMTdd"
+      "updated_at": "2020-04-23T06:32:28.938Z",
+      "version": "WzEwMjM1LDE3XQ=="
     },
     {
       "attributes": {
@@ -55,8 +60,8 @@
       },
       "references": [],
       "type": "visualization",
-      "updated_at": "2020-04-22T15:43:11.953Z",
-      "version": "Wzk4NTYsMTdd"
+      "updated_at": "2020-04-23T06:29:00.131Z",
+      "version": "WzEwMjE2LDE3XQ=="
     },
     {
       "attributes": {
@@ -75,8 +80,8 @@
       },
       "references": [],
       "type": "visualization",
-      "updated_at": "2020-04-22T15:44:50.076Z",
-      "version": "Wzk4NTgsMTdd"
+      "updated_at": "2020-04-23T06:29:00.131Z",
+      "version": "WzEwMjE3LDE3XQ=="
     },
     {
       "attributes": {
@@ -101,8 +106,34 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-22T15:31:06.921Z",
-      "version": "Wzk4NDMsMTdd"
+      "updated_at": "2020-04-23T06:29:00.131Z",
+      "version": "WzEwMjE4LDE3XQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "options list [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"options list [Filebeat gem]\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1586854291298\",\"fieldName\":\"@timestamp\",\"parent\":\"\",\"label\":\"select an experiment\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":20,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}"
+      },
+      "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "control_0_index_pattern",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-04-23T06:29:05.248Z",
+      "version": "WzEwMjM0LDE3XQ=="
     }
   ],
   "version": "7.6.1"

@@ -8,3 +8,7 @@ export M5OUT_MODIFICATION_TIME=$(date +%Y.%m.%d'-'%H.%M.%S -r $GEM5_PATH/m5out)
 export M5OUT_MODIFICATION_TIME_FIELD=$(date -r $GEM5_PATH/m5out)
 
 ./filebeat export dashboard -yml module/gem/module.yml
+
+rm -rf kibana
+mkdir -p kibana/7/dashboard
+cp -pr module/gem/_meta/kibana/7/dashboard/* kibana/7/dashboard
