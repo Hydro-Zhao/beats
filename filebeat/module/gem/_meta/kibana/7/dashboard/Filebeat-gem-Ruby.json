@@ -30,8 +30,8 @@
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-23T06:33:41.773Z",
-      "version": "WzEwMjM3LDE3XQ=="
+      "updated_at": "2020-05-08T05:05:13.309Z",
+      "version": "WzEyNzcwLDE3XQ=="
     },
     {
       "attributes": {
@@ -76,8 +76,8 @@
         }
       ],
       "type": "search",
-      "updated_at": "2020-04-23T06:29:01.159Z",
-      "version": "WzEwMjIwLDE3XQ=="
+      "updated_at": "2020-05-08T05:05:13.309Z",
+      "version": "WzEyNzcxLDE3XQ=="
     },
     {
       "attributes": {
@@ -102,8 +102,8 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-23T06:29:05.248Z",
-      "version": "WzEwMjM0LDE3XQ=="
+      "updated_at": "2020-05-08T05:05:18.458Z",
+      "version": "WzEyNzg5LDE3XQ=="
     }
   ],
   "version": "7.6.1"

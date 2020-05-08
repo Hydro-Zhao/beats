@@ -37,6 +37,7 @@ make create-fields MODULE=gem FILESET=pipeview
 make create-fields MODULE=gem FILESET=dram
 make create-fields MODULE=gem FILESET=configImg
 make create-fields MODULE=gem FILESET=SimpleSSDDebugLog
+make create-fields MODULE=gem FILESET=SimpleSSDDebugLogAll
 make create-fields MODULE=gem FILESET=SimpleSSDLog
 make create-fields MODULE=gem FILESET=GarnetSyntheticTraffic
 make create-fields MODULE=gem FILESET=Ruby

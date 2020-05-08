@@ -1,0 +1,48 @@
+type: log
+paths:
+{{ range $i, $path := .paths }}
+ - {{$path}}
+{{ end }}
+exclude_files: [".gz$"]
+
+close_eof: true
+clean_removed: true
+
+processors:
+- add_locale: ~
+- script:
+    lang: javascript
+    id: gem_SimpleSSDDebugLogAll
+    params:
+      m5outTime: "${M5OUT_MODIFICATION_TIME_FIELD}"
+    source: >
+      var m5outTime;
+      function register(scriptParams) {
+          m5outTime = scriptParams.m5outTime;
+      }
+      function process(event) {
+          event.Delete("event.module");
+          event.Delete("input.type");
+          event.Delete("log.file");
+          event.Delete("log.offset");
+          event.Delete("log.flags");
+          event.Delete("fileset.name");
+          event.Delete("service.type");
+          //ecs.version is added after beats event
+          //event.Delete("ecs.version");
+          //event.Delete("host.name");
+
+          event.Put("SimpleSSSD.DebugLogAll.timestamp", m5outTime);
+
+          var message = event.Get("message");
+          var line = message.split(/: /);
+          event.Put("SimpleSSD.DebugLogAll.tick", Number(line[0]));
+          event.Put("SimpleSSD.DebugLogAll.name", line[1]);
+          event.Put("SimpleSSD.DebugLogAll.message", line[2]);
+
+          event.Delete("message");
+      }
+#- drop_event:
+#    when:
+#      not:
+#        has_fields: ["SimpleSSD.DebugLogAll.tick"]

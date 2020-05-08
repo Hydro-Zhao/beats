@@ -1,0 +1,90 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+        },
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "panelsJSON": "[{\"embeddableConfig\":{\"title\":\"CPU Core\"},\"gridData\":{\"h\":26,\"i\":\"cbd4f865-b5f8-4d77-96d0-daa98267c4dd\",\"w\":24,\"x\":0,\"y\":0},\"panelIndex\":\"cbd4f865-b5f8-4d77-96d0-daa98267c4dd\",\"title\":\"CPU Core\",\"version\":\"7.6.1\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{\"title\":\"CPU L2\"},\"gridData\":{\"h\":26,\"i\":\"702df198-135e-4718-b7d7-62bf4ba0d0b0\",\"w\":24,\"x\":24,\"y\":0},\"panelIndex\":\"702df198-135e-4718-b7d7-62bf4ba0d0b0\",\"title\":\"CPU L2\",\"version\":\"7.6.1\",\"panelRefName\":\"panel_1\"}]",
+        "timeRestore": false,
+        "title": "[Filebeat gem] SimpleSSD",
+        "version": 1
+      },
+      "id": "59e01670-90e5-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      },
+      "references": [
+        {
+          "id": "070c95f0-90e4-11ea-8f49-6f3f3c3c70e9",
+          "name": "panel_0",
+          "type": "visualization"
+        },
+        {
+          "id": "a7cdd850-90e4-11ea-8f49-6f3f3c3c70e9",
+          "name": "panel_1",
+          "type": "visualization"
+        }
+      ],
+      "type": "dashboard",
+      "updated_at": "2020-05-08T04:35:31.799Z",
+      "version": "WzEyNzMwLDE3XQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "SimpleSSD.DebugLog.Core [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"SimpleSSD.DebugLog.Core [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":1,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":2,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":3,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":4,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.Core.Area.value\",\"customLabel\":\"Area\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.Core.Peak_Dynamic.value\",\"customLabel\":\"Peak Dynamic\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.Core.Subthreshold_Leakage.value\",\"customLabel\":\"Subthreshold Leakage\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.Core.Gate_Leakage.value\",\"customLabel\":\"Gate Leakage\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.Core.Runtime_Dynamic.value\",\"customLabel\":\"Runtime Dynamic\"}}]}"
+      },
+      "id": "070c95f0-90e4-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-08T04:34:08.191Z",
+      "version": "WzEyNzI3LDE3XQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "SimpleSSD.DebugLog.L2 [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"SimpleSSD.DebugLog.L2 [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":1,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":2,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":3,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}},{\"type\":\"vis_dimension\",\"accessor\":4,\"format\":{\"id\":\"number\",\"params\":{\"parsedUrl\":{\"origin\":\"http://114.55.251.62:5601\",\"pathname\":\"/s/gem5/app/kibana\",\"basePath\":\"/s/gem5\"}}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.L2.Area.value\",\"customLabel\":\"Area\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.L2.Peak_Dynamic.value\",\"customLabel\":\"Peak Dynamic\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.L2.Subthreshold_Leakage.value\",\"customLabel\":\"Subthreshold Leakage\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.L2.Gate_Leakage.value\",\"customLabel\":\"Gate Leakage\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SimpleSSD.DebugLog.L2.Runtime_Dynamic.value\",\"customLabel\":\"Runtime Dynamic\"}}]}"
+      },
+      "id": "a7cdd850-90e4-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-08T04:35:09.166Z",
+      "version": "WzEyNzI5LDE3XQ=="
+    }
+  ],
+  "version": "7.6.1"
+}

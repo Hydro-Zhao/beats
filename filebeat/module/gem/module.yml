@@ -11,3 +11,7 @@ dashboards:
   file: Filebeat-gem-RubyTopology.json
 - id: 9360ade0-83fe-11ea-8f49-6f3f3c3c70e9 
   file: Filebeat-gem-ExecRelation.json
+- id: a7b2c550-90db-11ea-8f49-6f3f3c3c70e9
+  file: Filebeat-gem-SimpleSSDDebugLogAll.json
+- id: 59e01670-90e5-11ea-8f49-6f3f3c3c70e9
+  file: Filebeat-gem-SimpleSSDDebugLog.json

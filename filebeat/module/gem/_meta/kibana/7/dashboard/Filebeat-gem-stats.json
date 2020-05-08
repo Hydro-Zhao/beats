@@ -8,7 +8,7 @@
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":6,\"i\":\"c17acef5-25a1-46a6-b03b-58f24b729219\"},\"panelIndex\":\"c17acef5-25a1-46a6-b03b-58f24b729219\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"}]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":7,\"i\":\"c17acef5-25a1-46a6-b03b-58f24b729219\"},\"panelIndex\":\"c17acef5-25a1-46a6-b03b-58f24b729219\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":24,\"h\":15,\"i\":\"d8fd52ca-f32a-4389-b030-33e7f0404a63\"},\"panelIndex\":\"d8fd52ca-f32a-4389-b030-33e7f0404a63\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"}]",
         "timeRestore": false,
         "title": "[Filebeat gem] stats",
         "version": 1
@@ -22,11 +22,16 @@
           "id": "669154d0-7e2d-11ea-bb3a-a37c1f505e63",
           "name": "panel_0",
           "type": "visualization"
+        },
+        {
+          "id": "e2db20a0-90ea-11ea-8f49-6f3f3c3c70e9",
+          "name": "panel_1",
+          "type": "visualization"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-04-23T06:29:05.248Z",
-      "version": "WzEwMjMzLDE3XQ=="
+      "updated_at": "2020-05-08T05:17:54.825Z",
+      "version": "WzEyODAxLDE3XQ=="
     },
     {
       "attributes": {
@@ -51,8 +56,34 @@
         }
       ],
       "type": "visualization",
-      "updated_at": "2020-04-23T06:29:05.248Z",
-      "version": "WzEwMjM0LDE3XQ=="
+      "updated_at": "2020-05-08T05:05:18.458Z",
+      "version": "WzEyNzg5LDE3XQ=="
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "stats [Filebeat gem]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"stats [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"gem5.stats.system.cpu.numCycles\",\"customLabel\":\"CYCLE COUNT: active CPU cycles\"}}]}"
+      },
+      "id": "e2db20a0-90ea-11ea-8f49-6f3f3c3c70e9",
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      },
+      "references": [
+        {
+          "id": "gem5-filebeat-*",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern"
+        }
+      ],
+      "type": "visualization",
+      "updated_at": "2020-05-08T05:15:09.098Z",
+      "version": "WzEyNzk4LDE3XQ=="
     }
   ],
   "version": "7.6.1"

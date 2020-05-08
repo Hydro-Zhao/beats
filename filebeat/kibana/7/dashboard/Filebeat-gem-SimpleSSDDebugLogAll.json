@@ -8,12 +8,12 @@
           "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"kuery\",\"query\":\"\"}}"
         },
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
-        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":7,\"i\":\"c17acef5-25a1-46a6-b03b-58f24b729219\"},\"panelIndex\":\"c17acef5-25a1-46a6-b03b-58f24b729219\",\"embeddableConfig\":{\"title\":\"\"},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":7,\"w\":24,\"h\":15,\"i\":\"d8fd52ca-f32a-4389-b030-33e7f0404a63\"},\"panelIndex\":\"d8fd52ca-f32a-4389-b030-33e7f0404a63\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"}]",
+        "panelsJSON": "[{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":6,\"i\":\"612d51c8-bcd5-4057-95f0-bb6201f191fa\"},\"panelIndex\":\"612d51c8-bcd5-4057-95f0-bb6201f191fa\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.6.1\",\"gridData\":{\"x\":0,\"y\":6,\"w\":48,\"h\":24,\"i\":\"14eeca10-0429-446e-9d2b-2c57eb16e0ac\"},\"panelIndex\":\"14eeca10-0429-446e-9d2b-2c57eb16e0ac\",\"embeddableConfig\":{\"sort\":[[\"@timestamp\",\"desc\"],[\"SimpleSSD.DebugLogAll.tick\",\"desc\"]]},\"panelRefName\":\"panel_1\"}]",
         "timeRestore": false,
-        "title": "[Filebeat gem] stats",
+        "title": "[Filebeat gem] SimpleSSDDebugLogAll",
         "version": 1
       },
-      "id": "52aab000-759b-11ea-950a-89e4f568c946",
+      "id": "a7b2c550-90db-11ea-8f49-6f3f3c3c70e9",
       "migrationVersion": {
         "dashboard": "7.3.0"
       },
@@ -24,14 +24,14 @@
           "type": "visualization"
         },
         {
-          "id": "e2db20a0-90ea-11ea-8f49-6f3f3c3c70e9",
+          "id": "2c448950-90de-11ea-8f49-6f3f3c3c70e9",
           "name": "panel_1",
-          "type": "visualization"
+          "type": "search"
         }
       ],
       "type": "dashboard",
-      "updated_at": "2020-05-08T05:17:54.825Z",
-      "version": "WzEyODAxLDE3XQ=="
+      "updated_at": "2020-05-08T05:05:15.353Z",
+      "version": "WzEyNzc1LDE3XQ=="
     },
     {
       "attributes": {
@@ -61,29 +61,44 @@
     },
     {
       "attributes": {
+        "columns": [
+          "SimpleSSD.DebugLogAll.tick",
+          "SimpleSSD.DebugLogAll.name",
+          "SimpleSSD.DebugLogAll.message"
+        ],
         "description": "",
+        "hits": 0,
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+          "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\",\"key\":\"event.dataset\",\"negate\":false,\"params\":{\"query\":\"gem.SimpleSSDDebugLogAll\"},\"type\":\"phrase\"},\"query\":{\"match_phrase\":{\"event.dataset\":\"gem.SimpleSSDDebugLogAll\"}}}],\"highlightAll\":true,\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"version\":true}"
         },
-        "title": "stats [Filebeat gem]",
-        "uiStateJSON": "{}",
-        "version": 1,
-        "visState": "{\"title\":\"stats [Filebeat gem]\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{}}}]},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"gem5.stats.system.cpu.numCycles\",\"customLabel\":\"CYCLE COUNT: active CPU cycles\"}}]}"
+        "sort": [
+          [
+            "@timestamp",
+            "desc"
+          ]
+        ],
+        "title": "SimpleSSDDebugLogAll [Filebeat gem]",
+        "version": 1
       },
-      "id": "e2db20a0-90ea-11ea-8f49-6f3f3c3c70e9",
+      "id": "2c448950-90de-11ea-8f49-6f3f3c3c70e9",
       "migrationVersion": {
-        "visualization": "7.4.2"
+        "search": "7.4.0"
       },
       "references": [
         {
           "id": "gem5-filebeat-*",
           "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
           "type": "index-pattern"
+        },
+        {
+          "id": "gem5-filebeat-*",
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+          "type": "index-pattern"
         }
       ],
-      "type": "visualization",
-      "updated_at": "2020-05-08T05:15:09.098Z",
-      "version": "WzEyNzk4LDE3XQ=="
+      "type": "search",
+      "updated_at": "2020-05-08T05:05:15.353Z",
+      "version": "WzEyNzc3LDE3XQ=="
     }
   ],
   "version": "7.6.1"
