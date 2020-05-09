@@ -1,0 +1,27 @@
+[
+    {
+        "event.dataset": "gem.SimpleSSDDebugLog",
+        "SimpleSSD.DebugLog.Core.Area.unit":	"mm^2",
+	    "SimpleSSD.DebugLog.Core.Area.value":	7.33,
+	    "SimpleSSD.DebugLog.Core.Gate_Leakage.unit":	"W",
+	    "SimpleSSD.DebugLog.Core.Gate_Leakage.value":	0.124,
+	    "SimpleSSD.DebugLog.Core.Peak_Dynamic.unit":	"W",
+	    "SimpleSSD.DebugLog.Core.Peak_Dynamic.value":	1.139,
+	    "SimpleSSD.DebugLog.Core.Runtime_Dynamic.unit":	"W",
+	    "SimpleSSD.DebugLog.Core.Runtime_Dynamic.value":	0.03,
+	    "SimpleSSD.DebugLog.Core.Subthreshold_Leakage.unit":	"W",
+	    "SimpleSSD.DebugLog.Core.Subthreshold_Leakage.value":	0.66,
+	    "SimpleSSD.DebugLog.L2.Area.unit":	"mm^2",
+	    "SimpleSSD.DebugLog.L2.Area.value":	7.336,
+	    "SimpleSSD.DebugLog.L2.Gate_Leakage.unit":	"W",
+	    "SimpleSSD.DebugLog.L2.Gate_Leakage.value":	0.011,
+	    "SimpleSSD.DebugLog.L2.Peak_Dynamic.unit":	"W",
+	    "SimpleSSD.DebugLog.L2.Peak_Dynamic.value":	0.173,
+	    "SimpleSSD.DebugLog.L2.Runtime_Dynamic.unit":	"W",
+	    "SimpleSSD.DebugLog.L2.Runtime_Dynamic.value":	0,
+	    "SimpleSSD.DebugLog.L2.Subthreshold_Leakage.unit":	"W",
+	    "SimpleSSD.DebugLog.L2.Subthreshold_Leakage.value":	0.245
+    }
+]
+
+
